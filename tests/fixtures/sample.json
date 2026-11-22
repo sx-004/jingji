@@ -1,0 +1,62 @@
+{
+  "routes": [
+    {
+      "source": "wscn-global",
+      "label": "华尔街见闻全球快讯",
+      "items": [
+        {"title": "富时A50期指连续夜盘收跌0.09%，报12650点。", "url": "https://wallstreetcn.com/livenews/3201520", "published_ms": 1794945500000},
+        {"title": "黄仁勋离职之际，美国证券交易委员会（SEC）正调查其公司英伟达。", "url": "https://wallstreetcn.com/livenews/3201511", "published_ms": 1794945345000},
+        {"title": "支出法案或再推迟，美国民主党寻求短期权宜方案", "url": "https://wallstreetcn.com/livenews/3201502", "published_ms": 1794945023000},
+        {"title": "南非拟寻求豁免欧盟混动汽车进口限制", "url": "https://wallstreetcn.com/livenews/3201496", "published_ms": 1794944976000},
+        {"title": "巴克莱预计2027年市政债供给量最高达6,000亿美元", "url": "https://wallstreetcn.com/livenews/3201492", "published_ms": 1794944852000}
+      ]
+    },
+    {
+      "source": "yicai-brief",
+      "label": "第一财经简报",
+      "items": [
+        {"title": "<b>纳指跌超2% |</b> 纳指跌超2%，道指跌1.7%，标普500指数跌1.65%。", "url": "https://www.yicai.com/news/1", "published_ms": 1794945300000},
+        {"title": "<b>德国DAX指数跌2% |</b> 德国DAX指数持续走低，现下跌2%。", "url": "https://www.yicai.com/news/2", "published_ms": 1794945120000},
+        {"title": "<b>首批18只主动ETF最高仓位超90%，下周一上市 |</b> 18只ETF披露上市公告书。", "url": "https://www.yicai.com/news/3", "published_ms": 1794944820000}
+      ]
+    },
+    {
+      "source": "caixin-latest",
+      "label": "财新",
+      "items": [
+        {"title": "京东集团三季度营收增长3.5% 京东外卖、海外等新业务收入“砍半”", "url": "https://www.caixin.com/2026-11-18/1.html", "published_ms": 1794944948000},
+        {"title": "APEC热议：全球贸易并未萎缩 只是版图已重构", "url": "https://www.caixin.com/2026-11-18/2.html", "published_ms": 1794944704000},
+        {"title": "桥水、索罗斯等机构三季度减持英伟达 华尔街对AI投资现分歧", "url": "https://www.caixin.com/2026-11-18/3.html", "published_ms": 1794944510000},
+        {"title": "科技股巨震 美股投资大佬三季度布局现结构性分歧", "url": "https://www.caixin.com/2026-11-18/4.html", "published_ms": 1794943470000},
+        {"title": "图集｜金正恩携妻女视察在建旅游区 金主爱体验滑雪", "url": "https://www.caixin.com/2026-11-18/5.html", "published_ms": 1794942400000}
+      ]
+    },
+    {
+      "source": "jin10",
+      "label": "金十数据",
+      "items": [
+        {"title": "美元指数17日下跌", "url": "https://www.jin10.com/example/1", "published_ms": 1794945466000},
+        {"title": "美股收盘：三大股指集体收跌", "url": "https://www.jin10.com/example/2", "published_ms": 1794945284000},
+        {"title": "比特币突破10万美元，加密货币全线大涨", "url": "https://www.jin10.com/example/3", "published_ms": 1794945200000},
+        {"title": "报道：美国证交会正在调查英伟达是否存在误导投资者的信息披露行为", "url": "https://www.jin10.com/example/4", "published_ms": 1794944825000}
+      ]
+    },
+    {
+      "source": "gelonghui-live",
+      "label": "格隆汇",
+      "items": [
+        {"title": "格隆汇11月18日｜谷歌(GOOG.O)：谷歌钱包现已在iOS系统于美国上线。", "url": "https://www.gelonghui.com/live/1", "published_ms": 1794945506000},
+        {"title": "格隆汇11月18日｜据华尔街日报：消息人士称，美国证券交易委员会正在调查英伟达(NVDA.O)。", "url": "https://www.gelonghui.com/live/2", "published_ms": 1794945578000},
+        {"title": "格隆汇11月18日｜马坦·卡哈纳以全票当选以色列议会议长。", "url": "https://www.gelonghui.com/live/3", "published_ms": 1794945440000}
+      ]
+    }
+  ],
+  "quotes": [
+    {"group": "美股", "name": "标普500", "code": "^GSPC", "price": 7340.53, "previous_close": 7520.93},
+    {"group": "美股", "name": "道指", "code": "^DJI", "price": 44010.2, "previous_close": 45286.4},
+    {"group": "美股", "name": "纳指", "code": "^IXIC", "price": 22141.6, "previous_close": 22812.9},
+    {"group": "亚太", "name": "恒生", "code": "^HSI", "price": 23508.17, "previous_close": 24558.0},
+    {"group": "商品", "name": "黄金", "code": "GC=F", "price": 3848.0, "previous_close": 3882.6},
+    {"group": "汇率债", "name": "VIX恐慌", "code": "^VIX", "price": 27.06, "previous_close": 18.28}
+  ]
+}

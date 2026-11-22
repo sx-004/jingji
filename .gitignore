@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+state/state.json
+state/state.json.tmp
+state/last-report.json
+state/selfcheck-state.json
+report.json
+probe_*.xml
+probe_*.json
+.DS_Store
+dryrun_output.txt

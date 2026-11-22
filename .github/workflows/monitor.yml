@@ -1,0 +1,90 @@
+name: 全球经济新闻监控
+
+on:
+  schedule:
+    # 每小时一次，避开整点（GitHub 整点高负载会丢任务）；有延迟就延迟。
+    - cron: '8 * * * *'
+  push:
+    # 新仓注册定时任务有延迟，主分支有提交时先补跑一轮（只干跑）。
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event_name }}
+  cancel-in-progress: ${{ github.event_name == 'push' }}
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 离线自检
+        # push 触发的代码改动可能把自检弄坏，那只是开发中的中间态，不该发失败邮件；
+        # 定时/手动触发的失败是真故障，照常标失败告警。
+        continue-on-error: ${{ github.event_name == 'push' }}
+        run: |
+          python main.py --self-check
+          python -m unittest discover -s tests -v
+
+      - name: 从 state 分支恢复去重状态
+        continue-on-error: ${{ github.event_name == 'push' }}
+        run: bash scripts/restore_state.sh
+
+      - name: 检查 Telegram 凭据（只读自查，不发消息）
+        continue-on-error: true
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python main.py --check-telegram
+
+      - name: 采集全球经济新闻并推送（push 触发只干跑）
+        continue-on-error: ${{ github.event_name == 'push' }}
+        # 定时与手动触发：一轮合成一条消息发 Telegram；没新增就静默。
+        # push 触发：只干跑，不推送，也不写正式去重状态。
+        # 私聊场景用户必须先给 bot 发过 /start，否则 Telegram 报 chat not found。
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          set +e
+          if [ "${{ github.event_name }}" = "push" ]; then
+            echo "事件 push：只干跑，不推送 Telegram；去重状态写单独的 dryrun 文件，不动正式状态。"
+            python main.py --dry-run --candidates --report report.json --state state/dryrun-state.json
+          else
+            echo "事件 ${{ github.event_name }}：正式推送 Telegram。"
+            python main.py --send --candidates --report report.json
+          fi
+          code=$?
+          set -e
+          echo "采集退出码 $code（0=正常/无新增静默，1=部分源失败已隔离，2=全源失败告警，5=配置或推送问题）"
+          # 全源失败（2）要让工作流失败，不能被 continue-on-error 吞掉；
+          # 单源失败（1）已隔离，不阻断。
+          if [ "$code" -gt 1 ]; then exit "$code"; fi
+
+      - name: 保存状态到 state 分支
+        # 只有真正推送的轮次才写正式状态；push 的干跑不能污染去重库，否则定时推送会被吃掉。
+        if: always() && github.event_name != 'push'
+        run: bash scripts/persist_state.sh
+
+      - name: 每日活动心跳（保证公开仓不停定时任务，不推 Telegram）
+        if: github.event_name != 'push'   # push 的干跑不写提交，避免自我触发
+        run: bash scripts/heartbeat.sh
+
+      - name: 上传运行报告
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: jingji-report-${{ github.run_number }}
+          path: report.json
+          retention-days: 14

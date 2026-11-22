@@ -1,9 +1,9 @@
 {
-  "started_at": "2026-11-22T16:13:38+00:00",
+  "started_at": "2026-11-22T22:26:43+00:00",
   "mode": "send",
-  "gap_minutes": 490.2,
-  "since_ms": 1795332803000,
-  "now_ms": 1795364018179,
+  "gap_minutes": 373.1,
+  "since_ms": 1795362218000,
+  "now_ms": 1795386403851,
   "overlap_minutes": 30,
   "max_items": 10,
   "sources": [
@@ -15,30 +15,30 @@
       "status": "ok",
       "error": "",
       "instance": "https://rsshub.rssforever.com",
-      "item_count": 34,
-      "duration_ms": 651
+      "item_count": 7,
+      "duration_ms": 1419
     },
     {
       "name": "yicai-brief",
       "label": "第一财经简报",
       "ok": true,
-      "state": "ok",
+      "state": "empty",
       "status": "ok",
       "error": "",
       "instance": "https://rsshub.rssforever.com",
-      "item_count": 39,
-      "duration_ms": 602
+      "item_count": 0,
+      "duration_ms": 1200
     },
     {
       "name": "caixin-latest",
       "label": "财新",
       "ok": true,
-      "state": "ok",
+      "state": "empty",
       "status": "ok",
       "error": "",
       "instance": "https://rsshub.rssforever.com",
-      "item_count": 5,
-      "duration_ms": 620
+      "item_count": 0,
+      "duration_ms": 1273
     },
     {
       "name": "jin10",
@@ -49,7 +49,7 @@
       "error": "",
       "instance": "https://rsshub.rssforever.com",
       "item_count": 0,
-      "duration_ms": 558
+      "duration_ms": 1051
     },
     {
       "name": "gelonghui-live",
@@ -60,21 +60,21 @@
       "error": "",
       "instance": "https://rsshub.rssforever.com",
       "item_count": 15,
-      "duration_ms": 510
+      "duration_ms": 1032
     }
   ],
   "source_state": "ok",
   "source_states": {
     "wscn-global": "ok",
-    "yicai-brief": "ok",
-    "caixin-latest": "ok",
+    "yicai-brief": "empty",
+    "caixin-latest": "empty",
     "jin10": "empty",
     "gelonghui-live": "ok"
   },
   "source_failures": {},
   "all_sources_failed": false,
   "stats": {
-    "raw_items": 93,
+    "raw_items": 22,
     "stale": 0,
     "future": 0,
     "no_timestamp": 0,
@@ -82,22 +82,22 @@
     "not_chinese": 0,
     "crypto": 0,
     "market_quote": 1,
-    "non_economic": 4,
-    "unclassified": 67,
-    "duplicated": 1,
+    "non_economic": 2,
+    "unclassified": 16,
+    "duplicated": 0,
     "duplicated_url": 0,
-    "earnings_detail": 6,
+    "earnings_detail": 0,
     "survey": 0
   },
-  "skipped_seen": 6,
+  "skipped_seen": 0,
   "selected": [
     {
       "source": "gelonghui-live",
       "label": "格隆汇",
-      "title": "美国财长贝森特：市场抛售源于美联储言论、中期选举等因素。",
-      "url": "https://www.gelonghui.com/live/2773615",
-      "published_ms": 1795362007000,
-      "summary": "美国财长贝森特：市场抛售源于美联储言论、中期选举等因素。",
+      "title": "CME“美联储观察”：美联储12月加息25个基点的概率为91.4%",
+      "url": "https://www.gelonghui.com/live/2773679",
+      "published_ms": 1795385536000,
+      "summary": "据CME“美联储观察”：美联储12月维持利率不变的概率为8.6%，加息25个基点的概率为91.4%，加息50个基点的概率为0%。美联储到明年1月维持利率不变的概率为3.2%，累计加息25个基点的概率39.1%，累计加息50个基点的概率为57.7%，累计加息75个基点的概率为0%。",
       "category": "央行",
       "rule": "cb-fed",
       "sources": [
@@ -105,98 +105,33 @@
       ]
     },
     {
-      "source": "yicai-brief",
-      "label": "第一财经简报",
-      "title": "沪深交易所、中国结算推出一揽子降费措施 | 沪深交易所推出新一批降费措施，包括免收交易单元使用费等，并将今年年初已实施的免收上市费、债券交易经手费...",
-      "url": "https://www.yicai.com/brief/103449279.html",
-      "published_ms": 1795344000000,
-      "summary": "沪深交易所、中国结算推出一揽子降费措施 |",
-      "category": "公司",
-      "rule": "co-action",
-      "sources": [
-        "第一财经简报"
-      ]
-    },
-    {
       "source": "gelonghui-live",
       "label": "格隆汇",
-      "title": "美国众议院民主党领袖杰弗里斯：医疗保健是民主党可能与特朗普合作的领域之一。",
-      "url": "https://www.gelonghui.com/live/2773620",
-      "published_ms": 1795362996000,
-      "summary": "美国众议院民主党领袖杰弗里斯：医疗保健是民主党可能与特朗普合作的领域之一。",
-      "category": "政策/贸易",
-      "rule": "pol-fiscal",
+      "title": "特朗普政府正准备对欧盟、澳大利亚和韩国启动数字贸易调查。",
+      "url": "https://www.gelonghui.com/live/2773673",
+      "published_ms": 1795383770000,
+      "summary": "特朗普政府正准备对欧盟、澳大利亚和韩国启动数字贸易调查。",
+      "category": "重大事件",
+      "rule": "ev-shock",
       "sources": [
         "格隆汇"
       ]
     },
     {
-      "source": "yicai-brief",
-      "label": "第一财经简报",
-      "title": "银河证券：震荡博弈中寻找确定性，配置上推荐“杠铃” 策略 | 银河证券在研报中表示，现阶段市场定价的重心在于交易流动性与风险偏好，盘面大概率维持震...",
-      "url": "https://www.yicai.com/brief/103449264.html",
-      "published_ms": 1795340220000,
-      "summary": "银河证券：震荡博弈中寻找确定性，配置上推荐“杠铃” 策略 |",
-      "category": "央行",
-      "rule": "cb-policy",
+      "source": "gelonghui-live",
+      "label": "格隆汇",
+      "title": "利比亚东部当局：我们已请求安理会就俄罗斯船只和马耳他船只在班加西遭袭一事展开紧急调查。",
+      "url": "https://www.gelonghui.com/live/2773672",
+      "published_ms": 1795382572000,
+      "summary": "利比亚东部当局：我们已请求安理会就俄罗斯船只和马耳他船只在班加西遭袭一事展开紧急调查。",
+      "category": "重大事件",
+      "rule": "ev-shock",
       "sources": [
-        "第一财经简报"
-      ]
-    },
-    {
-      "source": "wscn-global",
-      "label": "华尔街见闻全球快讯",
-      "title": "阿达尼能源宣布收购维克拉姆希拉电力公司100%股权",
-      "url": "https://wallstreetcn.com/livenews/3203735",
-      "published_ms": 1795341708000,
-      "summary": "11月22日，阿达尼能源解决方案公司公告称，公司已于印度时间11月21日与REC Power Development and Consultancy Limited（RECPDCL）签署《股份购买协议》，以收购维克拉姆希拉电力传输有限公司（VPTL）100%股权。",
-      "category": "公司",
-      "rule": "co-action",
-      "sources": [
-        "华尔街见闻全球快讯"
-      ]
-    },
-    {
-      "source": "wscn-global",
-      "label": "华尔街见闻全球快讯",
-      "title": "报道：美国民主党将寻求推翻特朗普的税收和关税政策",
-      "url": "https://wallstreetcn.com/livenews/3203760",
-      "published_ms": 1795354308000,
-      "summary": "美国民主党将在明年掌控美国国会后举行听证会，研究如何撤销特朗普经济政策中的关键内容，包括关税和税收政策。众议院负责贸易和税收事务的民主党最高级别议员理查德·尼尔表示，他计划对特朗普实施的各项关税政策展开全面调查。尼尔表示，他还将审查特朗普政府推出的税收优惠政策，包括加剧美国财政赤字的大规模减税措施，并将恢复数百万美国人享有的政府医疗补贴列为优先事项。 尼尔表示：“我们要重新聚焦于民众的负担能力，负",
-      "category": "政策/贸易",
-      "rule": "pol-trade",
-      "sources": [
-        "华尔街见闻全球快讯"
-      ]
-    },
-    {
-      "source": "yicai-brief",
-      "label": "第一财经简报",
-      "title": "方正证券：流动性好转之前防御为主，好转之后关注三方面配置机会 | 方正证券表示，流动性好转之前防御为主，好转之后关注三方面配置机会，一是科技成长的...",
-      "url": "https://www.yicai.com/brief/103449261.html",
-      "published_ms": 1795339920000,
-      "summary": "方正证券：流动性好转之前防御为主，好转之后关注三方面配置机会 |",
-      "category": "央行",
-      "rule": "cb-policy",
-      "sources": [
-        "第一财经简报"
-      ]
-    },
-    {
-      "source": "caixin-latest",
-      "label": "财新",
-      "title": "周末急出密集新规 救市“组合拳”是否有效开盘见分晓",
-      "url": "https://finance.caixin.com/2026-11-22/102507655.html",
-      "published_ms": 1795346351000,
-      "summary": "沪深北交易所同步下调融资保证金比例降至80%，深交所启动创业板做市，沪深交易所、中国结算对机构降费 【财新网】A股连续多日下跌后，11月22日周日晚间，沪深交易所、中国结算公司连发多项政策，救市指向明确。 新的政策包括沪深北交易所同步下调融资保证金比例降至80%，深交所启动创业板做市，沪深交易所和中国证券登记结算有限责任公司（下称“中国结算”）降低针对机构的多项收费。 根据沪深北三家交易所发布的《",
-      "category": "政策/贸易",
-      "rule": "pol-fiscal",
-      "sources": [
-        "财新"
+        "格隆汇"
       ]
     }
   ],
-  "message": "全球经济 · 本轮 8 条\n\n【央行】\n美国财长贝森特：市场抛售源于美联储言论、中期选举等因素。 — https://www.gelonghui.com/live/2773615\n银河证券：震荡博弈中寻找确定性，配置上推荐“杠铃” 策略 | 银河证券在研报中表示，现阶段市场定价的重心在于交易流动性与风险偏好，盘面大概率维持震... — https://www.yicai.com/brief/103449264.html\n方正证券：流动性好转之前防御为主，好转之后关注三方面配置机会 | 方正证券表示，流动性好转之前防御为主，好转之后关注三方面配置机会，一是科技成长的... — https://www.yicai.com/brief/103449261.html\n\n【公司】\n沪深交易所、中国结算推出一揽子降费措施 | 沪深交易所推出新一批降费措施，包括免收交易单元使用费等，并将今年年初已实施的免收上市费、债券交易经手费... — https://www.yicai.com/brief/103449279.html\n阿达尼能源宣布收购维克拉姆希拉电力公司100%股权 — https://wallstreetcn.com/livenews/3203735\n\n【政策/贸易】\n美国众议院民主党领袖杰弗里斯：医疗保健是民主党可能与特朗普合作的领域之一。 — https://www.gelonghui.com/live/2773620\n报道：美国民主党将寻求推翻特朗普的税收和关税政策 — https://wallstreetcn.com/livenews/3203760\n周末急出密集新规 救市“组合拳”是否有效开盘见分晓 — https://finance.caixin.com/2026-11-22/102507655.html\n\n【行情走向】\n美股：标普500 -3.70%｜道指 -1.93%｜纳指 -5.28%｜费半 -10.73%｜纳指100 -5.61%\n欧股：德国DAX -2.60%｜英国富时 -1.02%｜法国CAC -1.89%\nA股：上证 -1.22%｜深证 -3.09%｜沪深300 -0.76%｜创业板 -3.54%｜科创50 -3.12%\n亚太：恒生 -1.89%｜韩国KOSPI -5.21%｜日经 -5.06%\n商品：黄金 -4.62%｜白银 -7.33%｜原油 +0.24%｜铜 -2.49%\n汇率债：美元指数 -0.09%｜欧元美元 -0.02%｜美债10年 -2.77%｜VIX恐慌 +26.20%",
+  "message": "全球经济 · 本轮 3 条\n\n【央行】\nCME“美联储观察”：美联储12月加息25个基点的概率为91.4% — https://www.gelonghui.com/live/2773679\n\n【重大事件】\n特朗普政府正准备对欧盟、澳大利亚和韩国启动数字贸易调查。 — https://www.gelonghui.com/live/2773673\n利比亚东部当局：我们已请求安理会就俄罗斯船只和马耳他船只在班加西遭袭一事展开紧急调查。 — https://www.gelonghui.com/live/2773672\n\n【行情走向】\n美股：标普500 -3.70%｜道指 -1.93%｜纳指 -5.28%｜费半 -10.73%｜纳指100 -5.61%\n欧股：德国DAX -2.60%｜英国富时 -1.02%｜法国CAC -1.89%\nA股：上证 -1.22%｜深证 -3.09%｜沪深300 -0.76%｜创业板 -3.54%｜科创50 -3.12%\n亚太：恒生 -1.89%｜韩国KOSPI -5.21%｜日经 -5.06%\n商品：黄金 -4.62%｜白银 -7.33%｜原油 +0.24%｜铜 -2.49%\n汇率债：美元指数 +0.03%｜欧元美元 +0.01%｜美债10年 -2.77%｜VIX恐慌 +26.20%",
   "telegram_sent": true,
   "pending_count": 0,
   "board": {
@@ -405,9 +340,9 @@
         "group": "汇率债",
         "name": "美元指数",
         "code": "DX-Y.NYB",
-        "price": 103.81,
-        "previous_close": 103.9,
-        "change_pct": -0.09,
+        "price": 103.84,
+        "previous_close": 103.81,
+        "change_pct": 0.03,
         "ok": true,
         "error": ""
       },
@@ -415,9 +350,9 @@
         "group": "汇率债",
         "name": "欧元美元",
         "code": "EURUSD=X",
-        "price": 1.097,
-        "previous_close": 1.0972,
-        "change_pct": -0.02,
+        "price": 1.0971,
+        "previous_close": 1.097,
+        "change_pct": 0.01,
         "ok": true,
         "error": ""
       },
@@ -450,7 +385,7 @@
       "A股：上证 -1.22%｜深证 -3.09%｜沪深300 -0.76%｜创业板 -3.54%｜科创50 -3.12%",
       "亚太：恒生 -1.89%｜韩国KOSPI -5.21%｜日经 -5.06%",
       "商品：黄金 -4.62%｜白银 -7.33%｜原油 +0.24%｜铜 -2.49%",
-      "汇率债：美元指数 -0.09%｜欧元美元 -0.02%｜美债10年 -2.77%｜VIX恐慌 +26.20%"
+      "汇率债：美元指数 +0.03%｜欧元美元 +0.01%｜美债10年 -2.77%｜VIX恐慌 +26.20%"
     ]
   }
 }

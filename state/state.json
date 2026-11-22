@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
-  "updated_at": "2026-11-22T16:13:40.084895+00:00",
-  "last_run": "2026-11-22T16:13:38+00:00",
+  "updated_at": "2026-11-22T22:26:46.131079+00:00",
+  "last_run": "2026-11-22T22:26:43+00:00",
   "seen": [
     {
       "title": "机构：美国10月PCE通胀料升至3.8%，美联储12月加息预期或升温",
@@ -210,13 +210,37 @@
       "rule": "pol-fiscal",
       "status": "已推送",
       "at": "2026-11-22T16:13:40.084822+00:00"
+    },
+    {
+      "title": "CME“美联储观察”：美联储12月加息25个基点的概率为91.4%",
+      "url": "https://www.gelonghui.com/live/2773679",
+      "category": "央行",
+      "rule": "cb-fed",
+      "status": "已推送",
+      "at": "2026-11-22T22:26:46.130982+00:00"
+    },
+    {
+      "title": "特朗普政府正准备对欧盟、澳大利亚和韩国启动数字贸易调查。",
+      "url": "https://www.gelonghui.com/live/2773673",
+      "category": "重大事件",
+      "rule": "ev-shock",
+      "status": "已推送",
+      "at": "2026-11-22T22:26:46.131004+00:00"
+    },
+    {
+      "title": "利比亚东部当局：我们已请求安理会就俄罗斯船只和马耳他船只在班加西遭袭一事展开紧急调查。",
+      "url": "https://www.gelonghui.com/live/2773672",
+      "category": "重大事件",
+      "rule": "ev-shock",
+      "status": "已推送",
+      "at": "2026-11-22T22:26:46.131009+00:00"
     }
   ],
   "source_failures": {},
   "source_states": {
     "wscn-global": "ok",
-    "yicai-brief": "ok",
-    "caixin-latest": "ok",
+    "yicai-brief": "empty",
+    "caixin-latest": "empty",
     "jin10": "empty",
     "gelonghui-live": "ok"
   },
@@ -232,6 +256,10 @@
     {
       "at": "2026-11-22T16:13:38+00:00",
       "gap_minutes": 490.2
+    },
+    {
+      "at": "2026-11-22T22:26:43+00:00",
+      "gap_minutes": 373.1
     }
   ],
   "pending": []

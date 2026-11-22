@@ -1,9 +1,9 @@
 {
-  "started_at": "2026-11-22T08:03:23+00:00",
+  "started_at": "2026-11-22T16:13:38+00:00",
   "mode": "send",
-  "gap_minutes": 35.9,
-  "since_ms": 1795330651000,
-  "now_ms": 1795334603200,
+  "gap_minutes": 490.2,
+  "since_ms": 1795332803000,
+  "now_ms": 1795364018179,
   "overlap_minutes": 30,
   "max_items": 10,
   "sources": [
@@ -15,8 +15,8 @@
       "status": "ok",
       "error": "",
       "instance": "https://rsshub.rssforever.com",
-      "item_count": 3,
-      "duration_ms": 1746
+      "item_count": 34,
+      "duration_ms": 651
     },
     {
       "name": "yicai-brief",
@@ -26,8 +26,8 @@
       "status": "ok",
       "error": "",
       "instance": "https://rsshub.rssforever.com",
-      "item_count": 14,
-      "duration_ms": 1842
+      "item_count": 39,
+      "duration_ms": 602
     },
     {
       "name": "caixin-latest",
@@ -37,8 +37,8 @@
       "status": "ok",
       "error": "",
       "instance": "https://rsshub.rssforever.com",
-      "item_count": 1,
-      "duration_ms": 1546
+      "item_count": 5,
+      "duration_ms": 620
     },
     {
       "name": "jin10",
@@ -49,7 +49,7 @@
       "error": "",
       "instance": "https://rsshub.rssforever.com",
       "item_count": 0,
-      "duration_ms": 1333
+      "duration_ms": 558
     },
     {
       "name": "gelonghui-live",
@@ -60,7 +60,7 @@
       "error": "",
       "instance": "https://rsshub.rssforever.com",
       "item_count": 15,
-      "duration_ms": 1242
+      "duration_ms": 510
     }
   ],
   "source_state": "ok",
@@ -74,30 +74,30 @@
   "source_failures": {},
   "all_sources_failed": false,
   "stats": {
-    "raw_items": 33,
+    "raw_items": 93,
     "stale": 0,
     "future": 0,
     "no_timestamp": 0,
     "too_short": 0,
     "not_chinese": 0,
     "crypto": 0,
-    "market_quote": 0,
-    "non_economic": 1,
-    "unclassified": 17,
-    "duplicated": 5,
+    "market_quote": 1,
+    "non_economic": 4,
+    "unclassified": 67,
+    "duplicated": 1,
     "duplicated_url": 0,
-    "earnings_detail": 2,
+    "earnings_detail": 6,
     "survey": 0
   },
-  "skipped_seen": 0,
+  "skipped_seen": 6,
   "selected": [
     {
       "source": "gelonghui-live",
       "label": "格隆汇",
-      "title": "美银：股市回吐全年涨幅是阻止美联储继续加息的最快方式",
-      "url": "https://www.gelonghui.com/live/2773524",
-      "published_ms": 1795333356000,
-      "summary": "美银首席投资策略师Michael Hartnett在最新一期《Flow Show》中表示，阻止美联储继续加息的最快方式，是让美股回吐2026年全部涨幅。对应的标普500指数点位为6845点，较周五6925点的收盘水平仅低约80点、约1.2%。 Hartnett将标普跌破6845点、投资级CDX升破80个基点，视为观察政策转向的两道门槛。如果美联储仍愿意对华尔街压力作出反应，股市下跌与信用利差走阔，",
+      "title": "美国财长贝森特：市场抛售源于美联储言论、中期选举等因素。",
+      "url": "https://www.gelonghui.com/live/2773615",
+      "published_ms": 1795362007000,
+      "summary": "美国财长贝森特：市场抛售源于美联储言论、中期选举等因素。",
       "category": "央行",
       "rule": "cb-fed",
       "sources": [
@@ -107,24 +107,49 @@
     {
       "source": "yicai-brief",
       "label": "第一财经简报",
-      "title": "天阳科技：因涉嫌信息披露违法违规 证监会决定对公司立案 | 天阳科技公告称，公司于2026年11月20日收到证监会出具的《立案告知书》。因涉嫌信息披露违法...",
-      "url": "https://www.yicai.com/brief/103449222.html",
-      "published_ms": 1795333440000,
-      "summary": "天阳科技：因涉嫌信息披露违法违规 证监会决定对公司立案 |",
-      "category": "重大事件",
-      "rule": "ev-shock",
+      "title": "沪深交易所、中国结算推出一揽子降费措施 | 沪深交易所推出新一批降费措施，包括免收交易单元使用费等，并将今年年初已实施的免收上市费、债券交易经手费...",
+      "url": "https://www.yicai.com/brief/103449279.html",
+      "published_ms": 1795344000000,
+      "summary": "沪深交易所、中国结算推出一揽子降费措施 |",
+      "category": "公司",
+      "rule": "co-action",
       "sources": [
-        "第一财经简报",
+        "第一财经简报"
+      ]
+    },
+    {
+      "source": "gelonghui-live",
+      "label": "格隆汇",
+      "title": "美国众议院民主党领袖杰弗里斯：医疗保健是民主党可能与特朗普合作的领域之一。",
+      "url": "https://www.gelonghui.com/live/2773620",
+      "published_ms": 1795362996000,
+      "summary": "美国众议院民主党领袖杰弗里斯：医疗保健是民主党可能与特朗普合作的领域之一。",
+      "category": "政策/贸易",
+      "rule": "pol-fiscal",
+      "sources": [
         "格隆汇"
+      ]
+    },
+    {
+      "source": "yicai-brief",
+      "label": "第一财经简报",
+      "title": "银河证券：震荡博弈中寻找确定性，配置上推荐“杠铃” 策略 | 银河证券在研报中表示，现阶段市场定价的重心在于交易流动性与风险偏好，盘面大概率维持震...",
+      "url": "https://www.yicai.com/brief/103449264.html",
+      "published_ms": 1795340220000,
+      "summary": "银河证券：震荡博弈中寻找确定性，配置上推荐“杠铃” 策略 |",
+      "category": "央行",
+      "rule": "cb-policy",
+      "sources": [
+        "第一财经简报"
       ]
     },
     {
       "source": "wscn-global",
       "label": "华尔街见闻全球快讯",
-      "title": "阿福健康生态大会，蚂蚁CEO韩歆毅谈AI如何服务患者、医生和医学",
-      "url": "https://wallstreetcn.com/livenews/3203726",
-      "published_ms": 1795334383000,
-      "summary": "11月22日，在广州举行的2026蚂蚁阿福医疗健康生态大会上，蚂蚁集团CEO韩歆毅提出医疗AI的四个应用方向：延伸院外照护、辅助临床判断、支持真实世界研究和培养青年医生。 韩歆毅以术后随访为例，医生可预设康复节点，由系统主动询问患者恢复情况。在临床决策中，AI可串联病程信息，并通过UpToDate等资源提供可追溯的循证依据，最终判断仍由医生作出。AI还可将门诊记录与随访对话转化为结构化研究资料，并",
+      "title": "阿达尼能源宣布收购维克拉姆希拉电力公司100%股权",
+      "url": "https://wallstreetcn.com/livenews/3203735",
+      "published_ms": 1795341708000,
+      "summary": "11月22日，阿达尼能源解决方案公司公告称，公司已于印度时间11月21日与REC Power Development and Consultancy Limited（RECPDCL）签署《股份购买协议》，以收购维克拉姆希拉电力传输有限公司（VPTL）100%股权。",
       "category": "公司",
       "rule": "co-action",
       "sources": [
@@ -132,73 +157,46 @@
       ]
     },
     {
-      "source": "yicai-brief",
-      "label": "第一财经简报",
-      "title": "三安光电：副董事长兼总经理林科闯辞职 | 三安光电公告称，公司董事会于2026年11月21日收到副董事长兼总经理林科闯的书面辞职申请。因个人身体原因，林科...",
-      "url": "https://www.yicai.com/brief/103449238.html",
-      "published_ms": 1795333620000,
-      "summary": "三安光电：副董事长兼总经理林科闯辞职 |",
-      "category": "公司",
-      "rule": "co-action",
+      "source": "wscn-global",
+      "label": "华尔街见闻全球快讯",
+      "title": "报道：美国民主党将寻求推翻特朗普的税收和关税政策",
+      "url": "https://wallstreetcn.com/livenews/3203760",
+      "published_ms": 1795354308000,
+      "summary": "美国民主党将在明年掌控美国国会后举行听证会，研究如何撤销特朗普经济政策中的关键内容，包括关税和税收政策。众议院负责贸易和税收事务的民主党最高级别议员理查德·尼尔表示，他计划对特朗普实施的各项关税政策展开全面调查。尼尔表示，他还将审查特朗普政府推出的税收优惠政策，包括加剧美国财政赤字的大规模减税措施，并将恢复数百万美国人享有的政府医疗补贴列为优先事项。 尼尔表示：“我们要重新聚焦于民众的负担能力，负",
+      "category": "政策/贸易",
+      "rule": "pol-trade",
       "sources": [
-        "第一财经简报",
-        "格隆汇"
+        "华尔街见闻全球快讯"
       ]
     },
     {
       "source": "yicai-brief",
       "label": "第一财经简报",
-      "title": "思特威：拟向武汉楚兴增资15亿元 用以补齐高端CMOS图像传感器领域代工产能短板 | 思特威公告称，公司拟向武汉楚兴技术有限公司增资15亿元，增资后持有其5...",
-      "url": "https://www.yicai.com/brief/103449236.html",
-      "published_ms": 1795333620000,
-      "summary": "思特威：拟向武汉楚兴增资15亿元 用以补齐高端CMOS图像传感器领域代工产能短板 |",
-      "category": "公司",
-      "rule": "co-action",
+      "title": "方正证券：流动性好转之前防御为主，好转之后关注三方面配置机会 | 方正证券表示，流动性好转之前防御为主，好转之后关注三方面配置机会，一是科技成长的...",
+      "url": "https://www.yicai.com/brief/103449261.html",
+      "published_ms": 1795339920000,
+      "summary": "方正证券：流动性好转之前防御为主，好转之后关注三方面配置机会 |",
+      "category": "央行",
+      "rule": "cb-policy",
       "sources": [
         "第一财经简报"
       ]
     },
     {
-      "source": "yicai-brief",
-      "label": "第一财经简报",
-      "title": "荣盛发展：股票收盘价首次低于1元 存在可能因股价低于面值被终止上市的风险 | 荣盛发展公告称，公司股票于2026年11月20日收盘价为0.96元/股，自该日起首...",
-      "url": "https://www.yicai.com/brief/103449228.html",
-      "published_ms": 1795333560000,
-      "summary": "荣盛发展：股票收盘价首次低于1元 存在可能因股价低于面值被终止上市的风险 |",
-      "category": "公司",
-      "rule": "co-action",
+      "source": "caixin-latest",
+      "label": "财新",
+      "title": "周末急出密集新规 救市“组合拳”是否有效开盘见分晓",
+      "url": "https://finance.caixin.com/2026-11-22/102507655.html",
+      "published_ms": 1795346351000,
+      "summary": "沪深北交易所同步下调融资保证金比例降至80%，深交所启动创业板做市，沪深交易所、中国结算对机构降费 【财新网】A股连续多日下跌后，11月22日周日晚间，沪深交易所、中国结算公司连发多项政策，救市指向明确。 新的政策包括沪深北交易所同步下调融资保证金比例降至80%，深交所启动创业板做市，沪深交易所和中国证券登记结算有限责任公司（下称“中国结算”）降低针对机构的多项收费。 根据沪深北三家交易所发布的《",
+      "category": "政策/贸易",
+      "rule": "pol-fiscal",
       "sources": [
-        "第一财经简报"
-      ]
-    },
-    {
-      "source": "gelonghui-live",
-      "label": "格隆汇",
-      "title": "思特威：拟向武汉楚兴增资15亿元 用以补齐高端CMOS图像传感器领域代工产能短板",
-      "url": "https://www.gelonghui.com/live/2773526",
-      "published_ms": 1795333436000,
-      "summary": "思特威(688213.SH)公告称，公司拟向武汉楚兴技术有限公司增资15亿元，增资后持有其5.5880%股权，武汉楚兴将成为公司参股公司。本次交易旨在补齐高端CMOS图像传感器领域代工产能短板，提升供应链安全保障水平。增资资金来源于银行贷款，不会占用自有资金。标的公司目前处于产能爬坡期，短期内可能仍处于亏损状态。",
-      "category": "公司",
-      "rule": "co-action",
-      "sources": [
-        "格隆汇"
-      ]
-    },
-    {
-      "source": "gelonghui-live",
-      "label": "格隆汇",
-      "title": "荣盛发展：股票收盘价首次低于1元 存在可能因股价低于面值被终止上市的风险",
-      "url": "https://www.gelonghui.com/live/2773522",
-      "published_ms": 1795333078000,
-      "summary": "荣盛发展(002146.SZ)公告称，公司股票于2026年11月20日收盘价为0.96元/股，自该日起首次低于人民币1元。根据深交所相关规定，若公司股票连续二十个交易日收盘价均低于1元，深交所将终止其股票上市交易。公司股票存在可能因股价低于面值被终止上市的风险。本公告为公司可能触发面值退市的第一次终止上市风险提示公告。公司表示正积极与各方探讨债务风险化解路径，日常经营活动正常开展。",
-      "category": "公司",
-      "rule": "co-action",
-      "sources": [
-        "格隆汇"
+        "财新"
       ]
     }
   ],
-  "message": "全球经济 · 本轮 8 条\n\n【央行】\n美银：股市回吐全年涨幅是阻止美联储继续加息的最快方式 — https://www.gelonghui.com/live/2773524\n\n【重大事件】\n天阳科技：因涉嫌信息披露违法违规 证监会决定对公司立案 | 天阳科技公告称，公司于2026年11月20日收到证监会出具的《立案告知书》。因涉嫌信息披露违法... — https://www.yicai.com/brief/103449222.html\n\n【公司】\n阿福健康生态大会，蚂蚁CEO韩歆毅谈AI如何服务患者、医生和医学 — https://wallstreetcn.com/livenews/3203726\n三安光电：副董事长兼总经理林科闯辞职 | 三安光电公告称，公司董事会于2026年11月21日收到副董事长兼总经理林科闯的书面辞职申请。因个人身体原因，林科... — https://www.yicai.com/brief/103449238.html\n思特威：拟向武汉楚兴增资15亿元 用以补齐高端CMOS图像传感器领域代工产能短板 | 思特威公告称，公司拟向武汉楚兴技术有限公司增资15亿元，增资后持有其5... — https://www.yicai.com/brief/103449236.html\n荣盛发展：股票收盘价首次低于1元 存在可能因股价低于面值被终止上市的风险 | 荣盛发展公告称，公司股票于2026年11月20日收盘价为0.96元/股，自该日起首... — https://www.yicai.com/brief/103449228.html\n思特威：拟向武汉楚兴增资15亿元 用以补齐高端CMOS图像传感器领域代工产能短板 — https://www.gelonghui.com/live/2773526\n荣盛发展：股票收盘价首次低于1元 存在可能因股价低于面值被终止上市的风险 — https://www.gelonghui.com/live/2773522\n\n【行情走向】\n美股：标普500 -3.70%｜道指 -1.93%｜纳指 -5.28%｜费半 -10.73%｜纳指100 -5.61%\n欧股：德国DAX -2.60%｜英国富时 -1.02%｜法国CAC -1.89%\nA股：上证 -1.22%｜深证 -3.09%｜沪深300 -0.76%｜创业板 -3.54%｜科创50 -3.12%\n亚太：恒生 -1.89%｜韩国KOSPI -5.21%｜日经 -5.06%\n商品：黄金 -4.62%｜白银 -7.33%｜原油 +0.24%｜铜 -2.49%\n汇率债：美元指数 -0.09%｜欧元美元 -0.02%｜美债10年 -2.77%｜VIX恐慌 +26.20%",
+  "message": "全球经济 · 本轮 8 条\n\n【央行】\n美国财长贝森特：市场抛售源于美联储言论、中期选举等因素。 — https://www.gelonghui.com/live/2773615\n银河证券：震荡博弈中寻找确定性，配置上推荐“杠铃” 策略 | 银河证券在研报中表示，现阶段市场定价的重心在于交易流动性与风险偏好，盘面大概率维持震... — https://www.yicai.com/brief/103449264.html\n方正证券：流动性好转之前防御为主，好转之后关注三方面配置机会 | 方正证券表示，流动性好转之前防御为主，好转之后关注三方面配置机会，一是科技成长的... — https://www.yicai.com/brief/103449261.html\n\n【公司】\n沪深交易所、中国结算推出一揽子降费措施 | 沪深交易所推出新一批降费措施，包括免收交易单元使用费等，并将今年年初已实施的免收上市费、债券交易经手费... — https://www.yicai.com/brief/103449279.html\n阿达尼能源宣布收购维克拉姆希拉电力公司100%股权 — https://wallstreetcn.com/livenews/3203735\n\n【政策/贸易】\n美国众议院民主党领袖杰弗里斯：医疗保健是民主党可能与特朗普合作的领域之一。 — https://www.gelonghui.com/live/2773620\n报道：美国民主党将寻求推翻特朗普的税收和关税政策 — https://wallstreetcn.com/livenews/3203760\n周末急出密集新规 救市“组合拳”是否有效开盘见分晓 — https://finance.caixin.com/2026-11-22/102507655.html\n\n【行情走向】\n美股：标普500 -3.70%｜道指 -1.93%｜纳指 -5.28%｜费半 -10.73%｜纳指100 -5.61%\n欧股：德国DAX -2.60%｜英国富时 -1.02%｜法国CAC -1.89%\nA股：上证 -1.22%｜深证 -3.09%｜沪深300 -0.76%｜创业板 -3.54%｜科创50 -3.12%\n亚太：恒生 -1.89%｜韩国KOSPI -5.21%｜日经 -5.06%\n商品：黄金 -4.62%｜白银 -7.33%｜原油 +0.24%｜铜 -2.49%\n汇率债：美元指数 -0.09%｜欧元美元 -0.02%｜美债10年 -2.77%｜VIX恐慌 +26.20%",
   "telegram_sent": true,
   "pending_count": 0,
   "board": {

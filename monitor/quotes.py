@@ -1,6 +1,8 @@
 """Yahoo Finance 行情看板：只算百分比涨跌，不给点位、不给 K 线、不做买卖建议。
 
-取 regularMarketPrice 与 chartPreviousClose 算涨跌百分比（实测与 Notion 样例一致）。
+range=5d 的 chartPreviousClose 是「5 天区间开始前一天」的收盘价，拿它算出来的是
+5 天累计涨跌，不是单日涨跌。单日涨跌必须用 indicators.quote[0].close 里最后两个
+有效收盘价（最后一个=最新，倒数第二个=上一交易日）。
 单个标的失败只跳过它，不让整块看板挂掉；全标失败单独记在报告里。
 """
 from __future__ import annotations
@@ -40,6 +42,47 @@ def quote_url(code: str) -> str:
     return CHART_API.format(code=urllib.parse.quote(code, safe=""))
 
 
+def single_day_change(closes, *, chart_previous_close=None,
+                      regular_market_price=None) -> Tuple[float, float, float, str]:
+    """日线 close 数组 → (最新价, 昨收, 单日涨跌%, 错误)。
+
+    正常情况（≥2 个有效收盘）：倒数第二个是上一交易日，最后一个是最新，
+    此时 chartPreviousClose 是「5 天区间开始前一天」的价，绝不能用。
+
+    例外：Yahoo 对部分 A 股指数整段只返回 1 条收盘（实测沪深300/创业板/科创50）。
+    这时第一条就是最新交易日，chartPreviousClose 恰好是它前一个交易日的收盘
+    （已用交易所昨收独立核对），用它算单日涨跌是对的；仅此一种情况用回退。
+    """
+    valid: List[float] = []
+    for raw in closes or []:
+        if raw is None:
+            continue
+        try:
+            value = float(raw)
+        except (TypeError, ValueError):
+            continue
+        if value > 0:
+            valid.append(value)
+    if len(valid) >= 2:
+        last, previous = valid[-1], valid[-2]
+        return last, previous, (last - previous) / previous * 100.0, ""
+    if len(valid) == 1:
+        try:
+            previous = float(chart_previous_close)
+        except (TypeError, ValueError):
+            previous = 0.0
+        if previous <= 0:
+            return 0.0, 0.0, 0.0, "只有一条日线收盘且没有昨收，无法算单日涨跌"
+        try:
+            price = float(regular_market_price)
+        except (TypeError, ValueError):
+            price = 0.0
+        if price <= 0:
+            price = valid[0]
+        return price, previous, (price - previous) / previous * 100.0, ""
+    return 0.0, 0.0, 0.0, "日线收盘有效值不足，无法算单日涨跌"
+
+
 def parse_chart(payload: dict, symbol: sources.QuoteSymbol) -> Quote:
     quote = Quote(group=symbol.group, name=symbol.name, code=symbol.code)
     try:
@@ -50,18 +93,21 @@ def parse_chart(payload: dict, symbol: sources.QuoteSymbol) -> Quote:
             quote.error = str(desc)[:200]
             return quote
         result = chart["result"][0]
-        meta = result["meta"]
-        price = float(meta["regularMarketPrice"])
-        previous = meta.get("chartPreviousClose")
-        if previous is None:
-            previous = meta.get("previousClose")
-        previous = float(previous)
-        if previous == 0:
-            quote.error = "昨收为 0，无法计算涨跌"
+        meta = result.get("meta") or {}
+        indicators = result.get("indicators") or {}
+        quote_series = indicators.get("quote") or []
+        closes = quote_series[0].get("close") if quote_series else []
+        price, previous, pct, error = single_day_change(
+            closes,
+            chart_previous_close=meta.get("chartPreviousClose"),
+            regular_market_price=meta.get("regularMarketPrice"),
+        )
+        if error:
+            quote.error = error
             return quote
         quote.price = price
         quote.previous_close = previous
-        quote.change_pct = (price - previous) / previous * 100.0
+        quote.change_pct = pct
         quote.ok = True
         return quote
     except (KeyError, IndexError, TypeError, ValueError) as exc:

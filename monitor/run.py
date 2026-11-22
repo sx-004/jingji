@@ -57,19 +57,20 @@ def fetch_all(since_ms: int, now_ms: int) -> List[rsshub.RouteResult]:
 
 
 def _fixture_quote(row: dict) -> quotes.Quote:
-    price = float(row.get("price") or 0)
-    previous = float(row.get("previous_close") or 0)
-    pct = (price - previous) / previous * 100.0 if previous else 0.0
-    return quotes.Quote(
-        group=str(row.get("group") or "美股"), name=str(row.get("name") or "?"),
-        code=str(row.get("code") or "?"), price=price, previous_close=previous,
-        change_pct=pct, ok=bool(row.get("ok", True)),
-        error=str(row.get("error") or ""),
-    )
+    """离线样例用真实 Yahoo chart 结构，和线上共用同一套单日涨跌算法。
+
+    样例里每条 quote 带 chart 字段（与接口返回一致），不再另写 price/previous_close
+    的百分比计算，避免两处逻辑跑偏。
+    """
+    symbol = sources.QuoteSymbol(
+        str(row.get("group") or "美股"), str(row.get("name") or "?"),
+        str(row.get("code") or "?"))
+    return quotes.parse_chart(row.get("chart") or {}, symbol)
 
 
 def _load_fixtures(path: str) -> Tuple[List[rsshub.RouteResult], List[quotes.Quote]]:
-    """离线样例：{"routes":[{source,label,items:[{title,url,published_ms}]}],"quotes":[...]}"""
+    """离线样例：{"routes":[{source,label,items:[{title,url,published_ms}]}],
+    "quotes":[{group,name,code,chart:{chart:{result:[...]}}}]}"""
     raw = json.loads(Path(path).read_text(encoding="utf-8"))
     results: List[rsshub.RouteResult] = []
     for row in raw.get("routes", []):

@@ -162,13 +162,19 @@ def _self_check() -> int:
     for title in ["马坦·卡哈纳以全票当选以色列议会议长", "金正恩携妻女视察在建旅游区"]:
         check(rules.filter_reason(title) == "non_economic", f"非经济杂项没挡住：{title}")
 
-    # 行情看板计算：现价/昨收 → 百分比
-    payload = {"chart": {"result": [{"meta": {
-        "regularMarketPrice": 7340.53, "chartPreviousClose": 7520.93, "symbol": "^GSPC",
-    }}]}}
+    # 行情看板：range=5d 必须用 close 数组最后两个有效值算单日涨跌。
+    # chartPreviousClose=7561.67 是区间开始前的收盘，拿它算会得到 -8.61% 的 5 天累计。
+    payload = {"chart": {"result": [{
+        "meta": {"regularMarketPrice": 6910.39, "chartPreviousClose": 7561.67, "symbol": "^GSPC"},
+        "indicators": {"quote": [{"close": [
+            7416.58984375, 7340.52978515625, 7323.6298828125,
+            7175.830078125, 6910.39013671875]}]},
+    }]}}
     quote = quotes.parse_chart(payload, sources.QuoteSymbol("美股", "标普500", "^GSPC"))
-    check(quote.ok and abs(quote.change_pct - (-2.40)) < 0.01,
-          f"行情涨跌计算错误：{quote.change_pct:.2f}%")
+    check(quote.ok and abs(quote.change_pct - (-3.70)) < 0.01,
+          f"单日涨跌计算错误：{quote.change_pct:.2f}%")
+    check(abs(quote.previous_close - 7175.830078125) < 0.01,
+          "昨收取错了：要用 close 倒数第二个有效值，不能用 chartPreviousClose")
     check(quotes.quote_url("^GSPC").endswith("%5EGSPC?interval=1d&range=5d"), "行情代码没做 URL 编码")
     check(quotes.quote_url("GC=F").find("GC%3DF") >= 0, "期货代码没编码")
     board = quotes.format_board([

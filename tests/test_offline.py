@@ -215,21 +215,70 @@ class QuoteBoardTests(unittest.TestCase):
     """行情看板：百分比计算、24 标的（A股独立分组）、分组格式、失败跳过。"""
 
     def test_change_calculation(self):
-        payload = {"chart": {"result": [{"meta": {
-            "regularMarketPrice": 7340.53, "chartPreviousClose": 7520.93,
-        }}]}}
+        # 真实 5d 结构：chartPreviousClose=7561.67 是区间开始前的价（老算法算出 -8.61%），
+        # 单日涨跌必须用 close 数组最后两个有效值，实测 -3.70%。
+        payload = {"chart": {"result": [{
+            "meta": {"regularMarketPrice": 6910.39, "chartPreviousClose": 7561.67},
+            "indicators": {"quote": [{"close": [
+                7416.58984375, 7340.52978515625, 7323.6298828125,
+                7175.830078125, 6910.39013671875]}]},
+        }]}}
         q = quotes.parse_chart(payload, sources.QuoteSymbol("美股", "标普500", "^GSPC"))
         self.assertTrue(q.ok)
-        self.assertAlmostEqual(q.change_pct, -2.40, places=2)
+        self.assertAlmostEqual(q.change_pct, -3.70, places=2)
+        self.assertAlmostEqual(q.previous_close, 7175.830078125, places=2)
+        self.assertAlmostEqual(q.price, 6910.39013671875, places=2)
 
-    def test_previous_close_fallback_and_error(self):
+    def test_chart_previous_close_ignored_and_none_filtered(self):
+        sym = sources.QuoteSymbol("商品", "黄金", "GC=F")
+        payload = {"chart": {"result": [{
+            "meta": {"regularMarketPrice": 3515.4, "chartPreviousClose": 3864.2},
+            "indicators": {"quote": [{"close": [3864.2, 3741.9, None, 3685.5, 3515.4]}]},
+        }]}}
+        q = quotes.parse_chart(payload, sym)
+        self.assertTrue(q.ok)
+        # 倒数第二个有效收盘是 3685.5，不是 None 前的 3741.9，更不是 3864.2。
+        self.assertAlmostEqual(q.previous_close, 3685.5, places=2)
+        self.assertAlmostEqual(q.change_pct, (3515.4 - 3685.5) / 3685.5 * 100, places=2)
+        self.assertNotAlmostEqual(q.change_pct, -9.03, places=2)
+
+    def test_no_closes_and_chart_error(self):
         sym = sources.QuoteSymbol("美股", "标普500", "^GSPC")
+        # 完全没有日线收盘（连一条都没有）→ 不能算，跳过。
         payload = {"chart": {"result": [{"meta": {
-            "regularMarketPrice": 100.0, "previousClose": 80.0,
+            "regularMarketPrice": 100.0, "chartPreviousClose": 80.0,
         }}]}}
-        self.assertAlmostEqual(quotes.parse_chart(payload, sym).change_pct, 25.0, places=2)
+        q = quotes.parse_chart(payload, sym)
+        self.assertFalse(q.ok)
+        self.assertIn("日线收盘", q.error)
         bad = quotes.parse_chart({"chart": {"error": {"description": "Not Found"}}}, sym)
         self.assertFalse(bad.ok)
+
+    def test_single_close_uses_verified_previous_close(self):
+        # 沪深300：Yahoo 整段只给 1 条收盘，chartPreviousClose 就是交易所昨收
+        # （已用腾讯行情核对：昨收 3984.84，单日 -0.76%）。
+        sym = sources.QuoteSymbol("A股", "沪深300", "000300.SS")
+        payload = {"chart": {"result": [{
+            "meta": {"regularMarketPrice": 3954.565, "chartPreviousClose": 3984.84},
+            "indicators": {"quote": [{"close": [3954.565]}]},
+        }]}}
+        q = quotes.parse_chart(payload, sym)
+        self.assertTrue(q.ok)
+        self.assertAlmostEqual(q.previous_close, 3984.84, places=2)
+        self.assertAlmostEqual(q.change_pct, -0.76, places=2)
+
+    def test_fixture_quote_uses_same_algorithm(self):
+        # run.py 的离线样例走同一套 parse_chart，不再另写一份百分比算法。
+        payload = {"chart": {"result": [{
+            "meta": {"regularMarketPrice": 6910.39, "chartPreviousClose": 7561.67},
+            "indicators": {"quote": [{"close": [
+                7416.59, 7340.53, 7323.63, 7175.83, 6910.39]}]},
+        }]}}
+        row = {"group": "美股", "name": "标普500", "code": "^GSPC", "chart": payload}
+        fixture_q = monitor_run._fixture_quote(row)
+        direct_q = quotes.parse_chart(payload, sources.QuoteSymbol("美股", "标普500", "^GSPC"))
+        self.assertAlmostEqual(fixture_q.change_pct, direct_q.change_pct, places=6)
+        self.assertAlmostEqual(fixture_q.previous_close, 7175.83, places=2)
 
     def test_url_encoding(self):
         self.assertIn("%5EGSPC", quotes.quote_url("^GSPC"))

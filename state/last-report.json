@@ -1,0 +1,483 @@
+{
+  "started_at": "2026-11-22T07:27:31+00:00",
+  "mode": "send",
+  "gap_minutes": -1,
+  "since_ms": 1795246051832,
+  "now_ms": 1795332451832,
+  "overlap_minutes": 30,
+  "max_items": 10,
+  "sources": [
+    {
+      "name": "wscn-global",
+      "label": "华尔街见闻全球快讯",
+      "ok": true,
+      "state": "ok",
+      "status": "ok",
+      "error": "",
+      "instance": "https://rsshub.rssforever.com",
+      "item_count": 51,
+      "duration_ms": 1307
+    },
+    {
+      "name": "yicai-brief",
+      "label": "第一财经简报",
+      "ok": true,
+      "state": "ok",
+      "status": "ok",
+      "error": "",
+      "instance": "https://rsshub.rssforever.com",
+      "item_count": 50,
+      "duration_ms": 3720
+    },
+    {
+      "name": "caixin-latest",
+      "label": "财新",
+      "ok": true,
+      "state": "ok",
+      "status": "ok",
+      "error": "",
+      "instance": "https://rsshub.rssforever.com",
+      "item_count": 12,
+      "duration_ms": 1154
+    },
+    {
+      "name": "jin10",
+      "label": "金十数据",
+      "ok": true,
+      "state": "empty",
+      "status": "ok",
+      "error": "",
+      "instance": "https://rsshub.rssforever.com",
+      "item_count": 0,
+      "duration_ms": 1005
+    },
+    {
+      "name": "gelonghui-live",
+      "label": "格隆汇",
+      "ok": true,
+      "state": "ok",
+      "status": "ok",
+      "error": "",
+      "instance": "https://rsshub.rssforever.com",
+      "item_count": 15,
+      "duration_ms": 3082
+    }
+  ],
+  "source_state": "ok",
+  "source_states": {
+    "wscn-global": "ok",
+    "yicai-brief": "ok",
+    "caixin-latest": "ok",
+    "jin10": "empty",
+    "gelonghui-live": "ok"
+  },
+  "source_failures": {},
+  "all_sources_failed": false,
+  "stats": {
+    "raw_items": 128,
+    "stale": 0,
+    "future": 0,
+    "no_timestamp": 0,
+    "too_short": 0,
+    "not_chinese": 0,
+    "crypto": 1,
+    "market_quote": 1,
+    "non_economic": 19,
+    "unclassified": 94,
+    "duplicated": 1,
+    "duplicated_url": 0,
+    "earnings_detail": 0,
+    "survey": 0
+  },
+  "skipped_seen": 0,
+  "selected": [
+    {
+      "source": "gelonghui-live",
+      "label": "格隆汇",
+      "title": "机构：美国10月PCE通胀料升至3.8%，美联储12月加息预期或升温",
+      "url": "https://www.gelonghui.com/live/2773504",
+      "published_ms": 1795327319000,
+      "summary": "机构分析指出，美国消费者在假日购物季到来前仍保持较强消费意愿，通胀压力暂未明显抑制支出。彭博社调查显示，经济学家预计美国10月经通胀调整后的个人消费支出环比增长0.1%，此前两个季度消费支出均实现强劲增长。与此同时，通胀压力可能进一步加剧。预计10月个人消费支出（PCE）价格指数同比上涨3.8%，接近美联储2%通胀目标的两倍。剔除食品和能源价格后的核心PCE指数预计也将加速上涨，进一步强化市场对美",
+      "category": "央行",
+      "rule": "cb-fed",
+      "sources": [
+        "格隆汇"
+      ]
+    },
+    {
+      "source": "gelonghui-live",
+      "label": "格隆汇",
+      "title": "高盛：恐慌指数接近峰值，未来一周美股仍可能面临新一轮大规模抛售",
+      "url": "https://www.gelonghui.com/live/2773507",
+      "published_ms": 1795328772000,
+      "summary": "据彭博，高盛交易部门表示，随着美股周五大跌，该行恐慌指数(PanicIndex)升至9，接近满分10，显示未来一周市场仍可能面临新一轮大规模抛售。高盛估算，商品交易顾问(CTA)等动量型交易者过去一个月已卖出约570亿美元股票，其美股净头寸已转为约190亿美元净空头。 该行模型预计，未来一周，即使市场横盘，CTA仍可能再抛售约658亿美元股票；若股市上涨，预计抛售规模约为286亿美元；若股市继续下",
+      "category": "重大事件",
+      "rule": "ev-investor",
+      "sources": [
+        "格隆汇"
+      ]
+    },
+    {
+      "source": "gelonghui-live",
+      "label": "格隆汇",
+      "title": "澳大利亚油气勘探和生产商海滩能源正就收购桑托斯部分资产进行谈判。",
+      "url": "https://www.gelonghui.com/live/2773514",
+      "published_ms": 1795332174000,
+      "summary": "澳大利亚油气勘探和生产商海滩能源正就收购桑托斯部分资产进行谈判。",
+      "category": "公司",
+      "rule": "co-action",
+      "sources": [
+        "格隆汇"
+      ]
+    },
+    {
+      "source": "wscn-global",
+      "label": "华尔街见闻全球快讯",
+      "title": "欧盟领导人会议主席：提议进一步削减2028-34年欧盟预算草案，并开征数字税",
+      "url": "https://wallstreetcn.com/livenews/3203683",
+      "published_ms": 1795267555000,
+      "summary": "欧盟领导人峰会主席周六提议进一步削减欧盟委员会提出的2028-2034年欧盟预算草案，并建议开辟新的收入来源，包括征收数字税，以帮助为欧盟政策提供资金。 作为欧盟领导人峰会主席的安东尼奥·科斯塔提出的削减方案，将使七年期预算总额较爱尔兰轮值主席国于10月提交的提案减少400亿欧元，降至1.582万亿欧元；与欧盟委员会最初的提案相比，则减少1806亿欧元。",
+      "category": "政策/贸易",
+      "rule": "pol-fiscal",
+      "sources": [
+        "华尔街见闻全球快讯"
+      ]
+    },
+    {
+      "source": "yicai-brief",
+      "label": "第一财经简报",
+      "title": "特朗普批美联储利率太高 美联储主席陷两难 | 据央视财经，当地时间20日，美国总统特朗普再度批评美联储，称当前利率水平过高，美联储的决策带有“政治属...",
+      "url": "https://www.yicai.com/brief/103449062.html",
+      "published_ms": 1795258320000,
+      "summary": "特朗普批美联储利率太高 美联储主席陷两难 |",
+      "category": "央行",
+      "rule": "cb-fed",
+      "sources": [
+        "第一财经简报"
+      ]
+    },
+    {
+      "source": "wscn-global",
+      "label": "华尔街见闻全球快讯",
+      "title": "中国石油天然气集团有限公司党组成员、副总经理谢军涉嫌严重违纪违法，目前正接受中央纪委国家监委纪律审查和监察调查。（新华社）",
+      "url": "https://wallstreetcn.com/livenews/3203708",
+      "published_ms": 1795316493000,
+      "summary": "中国石油天然气集团有限公司党组成员、副总经理谢军涉嫌严重违纪违法，目前正接受中央纪委国家监委纪律审查和监察调查。（新华社）",
+      "category": "重大事件",
+      "rule": "ev-shock",
+      "sources": [
+        "华尔街见闻全球快讯"
+      ]
+    },
+    {
+      "source": "yicai-brief",
+      "label": "第一财经简报",
+      "title": "韩国高考AI作弊事件发酵 教育部长引咎辞职 | 据央视新闻，当地时间22日，韩国教育部长官崔教振辞去职务，为韩国2027年度大学修学能力考试（韩国高考）期...",
+      "url": "https://www.yicai.com/brief/103449178.html",
+      "published_ms": 1795319760000,
+      "summary": "韩国高考AI作弊事件发酵 教育部长引咎辞职 |",
+      "category": "公司",
+      "rule": "co-action",
+      "sources": [
+        "第一财经简报",
+        "华尔街见闻全球快讯"
+      ]
+    },
+    {
+      "source": "wscn-global",
+      "label": "华尔街见闻全球快讯",
+      "title": "欧盟与印尼签署贸易和投资协定",
+      "url": "https://wallstreetcn.com/livenews/3203673",
+      "published_ms": 1795262784000,
+      "summary": "欧盟委员会主席冯德莱恩称，欧盟与印度尼西亚（印尼）签署了综合性经济合作伙伴协议与投资保护协议，以期促进贸易与投资。 欧盟委员会在一份新闻稿中表示，协议取消了欧盟商品出口到印尼的98.5%税目项下的进口关税。这两项协议现在都需要欧洲议会的批准。 印尼当局也在进行其内部的批准程序。",
+      "category": "政策/贸易",
+      "rule": "pol-trade",
+      "sources": [
+        "华尔街见闻全球快讯"
+      ]
+    },
+    {
+      "source": "yicai-brief",
+      "label": "第一财经简报",
+      "title": "下周关注丨首批18只主动ETF将上市，这些投资机会最靠谱 | ①首批18只主动ETF将上市",
+      "url": "https://www.yicai.com/brief/103449163.html",
+      "published_ms": 1795311660000,
+      "summary": "下周关注丨首批18只主动ETF将上市，这些投资机会最靠谱 |",
+      "category": "公司",
+      "rule": "co-action",
+      "sources": [
+        "第一财经简报"
+      ]
+    },
+    {
+      "source": "yicai-brief",
+      "label": "第一财经简报",
+      "title": "两艘油轮接连在驶出霍尔木兹海峡时遇袭 | 据新华社，根据英国海上贸易行动办公室21日发布的通报，两艘油轮当天接连在驶出霍尔木兹海峡时被不明抛射物击中...",
+      "url": "https://www.yicai.com/brief/103449037.html",
+      "published_ms": 1795256280000,
+      "summary": "两艘油轮接连在驶出霍尔木兹海峡时遇袭 |",
+      "category": "政策/贸易",
+      "rule": "pol-trade",
+      "sources": [
+        "第一财经简报"
+      ]
+    }
+  ],
+  "message": "全球经济 · 本轮 10 条\n\n【央行】\n机构：美国10月PCE通胀料升至3.8%，美联储12月加息预期或升温 — https://www.gelonghui.com/live/2773504\n特朗普批美联储利率太高 美联储主席陷两难 | 据央视财经，当地时间20日，美国总统特朗普再度批评美联储，称当前利率水平过高，美联储的决策带有“政治属... — https://www.yicai.com/brief/103449062.html\n\n【重大事件】\n高盛：恐慌指数接近峰值，未来一周美股仍可能面临新一轮大规模抛售 — https://www.gelonghui.com/live/2773507\n中国石油天然气集团有限公司党组成员、副总经理谢军涉嫌严重违纪违法，目前正接受中央纪委国家监委纪律审查和监察调查。（新华社） — https://wallstreetcn.com/livenews/3203708\n\n【公司】\n澳大利亚油气勘探和生产商海滩能源正就收购桑托斯部分资产进行谈判。 — https://www.gelonghui.com/live/2773514\n韩国高考AI作弊事件发酵 教育部长引咎辞职 | 据央视新闻，当地时间22日，韩国教育部长官崔教振辞去职务，为韩国2027年度大学修学能力考试（韩国高考）期... — https://www.yicai.com/brief/103449178.html\n下周关注丨首批18只主动ETF将上市，这些投资机会最靠谱 | ①首批18只主动ETF将上市 — https://www.yicai.com/brief/103449163.html\n\n【政策/贸易】\n欧盟领导人会议主席：提议进一步削减2028-34年欧盟预算草案，并开征数字税 — https://wallstreetcn.com/livenews/3203683\n欧盟与印尼签署贸易和投资协定 — https://wallstreetcn.com/livenews/3203673\n两艘油轮接连在驶出霍尔木兹海峡时遇袭 | 据新华社，根据英国海上贸易行动办公室21日发布的通报，两艘油轮当天接连在驶出霍尔木兹海峡时被不明抛射物击中... — https://www.yicai.com/brief/103449037.html\n\n【行情走向】\n美股：标普500 -8.61%｜道指 -8.02%｜纳指 -10.02%｜费半 -17.13%｜纳指100 -10.43%\n欧股：德国DAX -7.28%｜英国富时 -5.10%｜法国CAC -5.08%\nA股：上证 -1.91%｜深证 -4.06%｜沪深300 -0.76%｜创业板 -3.54%｜科创50 -3.12%\n亚太：恒生 -5.19%｜韩国KOSPI -7.95%｜日经 -5.41%\n商品：黄金 -9.03%｜白银 -13.15%｜原油 -3.02%｜铜 -8.22%\n汇率债：美元指数 +0.34%｜欧元美元 -0.45%｜美债10年 -4.08%｜VIX恐慌 +56.66%",
+  "telegram_sent": true,
+  "pending_count": 0,
+  "board": {
+    "quotes": [
+      {
+        "group": "美股",
+        "name": "标普500",
+        "code": "^GSPC",
+        "price": 6910.39,
+        "previous_close": 7561.67,
+        "change_pct": -8.61,
+        "ok": true,
+        "error": ""
+      },
+      {
+        "group": "美股",
+        "name": "道指",
+        "code": "^DJI",
+        "price": 48147.33,
+        "previous_close": 52347.55,
+        "change_pct": -8.02,
+        "ok": true,
+        "error": ""
+      },
+      {
+        "group": "美股",
+        "name": "纳指",
+        "code": "^IXIC",
+        "price": 22617.732,
+        "previous_close": 25136.27,
+        "change_pct": -10.02,
+        "ok": true,
+        "error": ""
+      },
+      {
+        "group": "美股",
+        "name": "费半",
+        "code": "^SOX",
+        "price": 8408.591,
+        "previous_close": 10146.32,
+        "change_pct": -17.13,
+        "ok": true,
+        "error": ""
+      },
+      {
+        "group": "美股",
+        "name": "纳指100",
+        "code": "^NDX",
+        "price": 25028.982,
+        "previous_close": 27943.74,
+        "change_pct": -10.43,
+        "ok": true,
+        "error": ""
+      },
+      {
+        "group": "欧股",
+        "name": "德国DAX",
+        "code": "^GDAXI",
+        "price": 24802.78,
+        "previous_close": 26749.95,
+        "change_pct": -7.28,
+        "ok": true,
+        "error": ""
+      },
+      {
+        "group": "欧股",
+        "name": "英国富时",
+        "code": "^FTSE",
+        "price": 10346.34,
+        "previous_close": 10902.6,
+        "change_pct": -5.1,
+        "ok": true,
+        "error": ""
+      },
+      {
+        "group": "欧股",
+        "name": "法国CAC",
+        "code": "^FCHI",
+        "price": 7927.75,
+        "previous_close": 8352.0,
+        "change_pct": -5.08,
+        "ok": true,
+        "error": ""
+      },
+      {
+        "group": "A股",
+        "name": "上证",
+        "code": "000001.SS",
+        "price": 3533.793,
+        "previous_close": 3602.57,
+        "change_pct": -1.91,
+        "ok": true,
+        "error": ""
+      },
+      {
+        "group": "A股",
+        "name": "深证",
+        "code": "399001.SZ",
+        "price": 10256.389,
+        "previous_close": 10690.78,
+        "change_pct": -4.06,
+        "ok": true,
+        "error": ""
+      },
+      {
+        "group": "A股",
+        "name": "沪深300",
+        "code": "000300.SS",
+        "price": 3954.565,
+        "previous_close": 3984.84,
+        "change_pct": -0.76,
+        "ok": true,
+        "error": ""
+      },
+      {
+        "group": "A股",
+        "name": "创业板",
+        "code": "399006.SZ",
+        "price": 2212.127,
+        "previous_close": 2293.34,
+        "change_pct": -3.54,
+        "ok": true,
+        "error": ""
+      },
+      {
+        "group": "A股",
+        "name": "科创50",
+        "code": "000688.SS",
+        "price": 1231.089,
+        "previous_close": 1270.78,
+        "change_pct": -3.12,
+        "ok": true,
+        "error": ""
+      },
+      {
+        "group": "亚太",
+        "name": "恒生",
+        "code": "^HSI",
+        "price": 22410.8,
+        "previous_close": 23637.6,
+        "change_pct": -5.19,
+        "ok": true,
+        "error": ""
+      },
+      {
+        "group": "亚太",
+        "name": "韩国KOSPI",
+        "code": "^KS11",
+        "price": 4869.96,
+        "previous_close": 5290.53,
+        "change_pct": -7.95,
+        "ok": true,
+        "error": ""
+      },
+      {
+        "group": "亚太",
+        "name": "日经",
+        "code": "^N225",
+        "price": 56436.65,
+        "previous_close": 59662.02,
+        "change_pct": -5.41,
+        "ok": true,
+        "error": ""
+      },
+      {
+        "group": "商品",
+        "name": "黄金",
+        "code": "GC=F",
+        "price": 3515.4,
+        "previous_close": 3864.2,
+        "change_pct": -9.03,
+        "ok": true,
+        "error": ""
+      },
+      {
+        "group": "商品",
+        "name": "白银",
+        "code": "SI=F",
+        "price": 41.07,
+        "previous_close": 47.288,
+        "change_pct": -13.15,
+        "ok": true,
+        "error": ""
+      },
+      {
+        "group": "商品",
+        "name": "原油",
+        "code": "CL=F",
+        "price": 83.41,
+        "previous_close": 86.01,
+        "change_pct": -3.02,
+        "ok": true,
+        "error": ""
+      },
+      {
+        "group": "商品",
+        "name": "铜",
+        "code": "HG=F",
+        "price": 5.485,
+        "previous_close": 5.976,
+        "change_pct": -8.22,
+        "ok": true,
+        "error": ""
+      },
+      {
+        "group": "汇率债",
+        "name": "美元指数",
+        "code": "DX-Y.NYB",
+        "price": 103.84,
+        "previous_close": 103.49,
+        "change_pct": 0.34,
+        "ok": true,
+        "error": ""
+      },
+      {
+        "group": "汇率债",
+        "name": "欧元美元",
+        "code": "EURUSD=X",
+        "price": 1.0975,
+        "previous_close": 1.1025,
+        "change_pct": -0.45,
+        "ok": true,
+        "error": ""
+      },
+      {
+        "group": "汇率债",
+        "name": "美债10年",
+        "code": "^TNX",
+        "price": 4.912,
+        "previous_close": 5.121,
+        "change_pct": -4.08,
+        "ok": true,
+        "error": ""
+      },
+      {
+        "group": "汇率债",
+        "name": "VIX恐慌",
+        "code": "^VIX",
+        "price": 35.89,
+        "previous_close": 22.91,
+        "change_pct": 56.66,
+        "ok": true,
+        "error": ""
+      }
+    ],
+    "failed": [],
+    "lines": [
+      "【行情走向】",
+      "美股：标普500 -8.61%｜道指 -8.02%｜纳指 -10.02%｜费半 -17.13%｜纳指100 -10.43%",
+      "欧股：德国DAX -7.28%｜英国富时 -5.10%｜法国CAC -5.08%",
+      "A股：上证 -1.91%｜深证 -4.06%｜沪深300 -0.76%｜创业板 -3.54%｜科创50 -3.12%",
+      "亚太：恒生 -5.19%｜韩国KOSPI -7.95%｜日经 -5.41%",
+      "商品：黄金 -9.03%｜白银 -13.15%｜原油 -3.02%｜铜 -8.22%",
+      "汇率债：美元指数 +0.34%｜欧元美元 -0.45%｜美债10年 -4.08%｜VIX恐慌 +56.66%"
+    ]
+  }
+}

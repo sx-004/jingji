@@ -1,9 +1,10 @@
 name: 全球经济新闻监控
 
 on:
-  schedule:
-    # 每小时一次，避开整点（GitHub 整点高负载会丢任务）；有延迟就延迟。
-    - cron: '8 * * * *'
+  # schedule 已停用：改用 NAS 本地 crontab 跑，避免与 NAS 双推。
+  # 恢复时把下面注释里的 schedule/cron 放开即可。
+  # schedule:
+  #   - cron: '每日/每小时待定'
   push:
     # 新仓注册定时任务有延迟，主分支有提交时先补跑一轮（只干跑）。
     branches: [main]

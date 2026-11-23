@@ -1,9 +1,9 @@
 {
-  "started_at": "2026-11-22T22:26:43+00:00",
+  "started_at": "2026-11-23T03:42:39+00:00",
   "mode": "send",
-  "gap_minutes": 373.1,
-  "since_ms": 1795362218000,
-  "now_ms": 1795386403851,
+  "gap_minutes": 315.9,
+  "since_ms": 1795384603000,
+  "now_ms": 1795405359342,
   "overlap_minutes": 30,
   "max_items": 10,
   "sources": [
@@ -15,41 +15,41 @@
       "status": "ok",
       "error": "",
       "instance": "https://rsshub.rssforever.com",
-      "item_count": 7,
-      "duration_ms": 1419
+      "item_count": 100,
+      "duration_ms": 1185
     },
     {
       "name": "yicai-brief",
       "label": "第一财经简报",
       "ok": true,
-      "state": "empty",
+      "state": "ok",
       "status": "ok",
       "error": "",
       "instance": "https://rsshub.rssforever.com",
-      "item_count": 0,
-      "duration_ms": 1200
+      "item_count": 50,
+      "duration_ms": 1101
     },
     {
       "name": "caixin-latest",
       "label": "财新",
       "ok": true,
-      "state": "empty",
+      "state": "ok",
       "status": "ok",
       "error": "",
       "instance": "https://rsshub.rssforever.com",
-      "item_count": 0,
-      "duration_ms": 1273
+      "item_count": 20,
+      "duration_ms": 2901
     },
     {
       "name": "jin10",
       "label": "金十数据",
       "ok": true,
-      "state": "empty",
+      "state": "ok",
       "status": "ok",
       "error": "",
       "instance": "https://rsshub.rssforever.com",
-      "item_count": 0,
-      "duration_ms": 1051
+      "item_count": 3,
+      "duration_ms": 945
     },
     {
       "name": "gelonghui-live",
@@ -60,57 +60,57 @@
       "error": "",
       "instance": "https://rsshub.rssforever.com",
       "item_count": 15,
-      "duration_ms": 1032
+      "duration_ms": 949
     }
   ],
   "source_state": "ok",
   "source_states": {
     "wscn-global": "ok",
-    "yicai-brief": "empty",
-    "caixin-latest": "empty",
-    "jin10": "empty",
+    "yicai-brief": "ok",
+    "caixin-latest": "ok",
+    "jin10": "ok",
     "gelonghui-live": "ok"
   },
   "source_failures": {},
   "all_sources_failed": false,
   "stats": {
-    "raw_items": 22,
+    "raw_items": 188,
     "stale": 0,
     "future": 0,
     "no_timestamp": 0,
     "too_short": 0,
     "not_chinese": 0,
-    "crypto": 0,
-    "market_quote": 1,
-    "non_economic": 2,
-    "unclassified": 16,
-    "duplicated": 0,
+    "crypto": 1,
+    "market_quote": 41,
+    "non_economic": 5,
+    "unclassified": 113,
+    "duplicated": 5,
     "duplicated_url": 0,
-    "earnings_detail": 0,
+    "earnings_detail": 1,
     "survey": 0
   },
-  "skipped_seen": 0,
+  "skipped_seen": 1,
   "selected": [
     {
-      "source": "gelonghui-live",
-      "label": "格隆汇",
-      "title": "CME“美联储观察”：美联储12月加息25个基点的概率为91.4%",
-      "url": "https://www.gelonghui.com/live/2773679",
-      "published_ms": 1795385536000,
-      "summary": "据CME“美联储观察”：美联储12月维持利率不变的概率为8.6%，加息25个基点的概率为91.4%，加息50个基点的概率为0%。美联储到明年1月维持利率不变的概率为3.2%，累计加息25个基点的概率39.1%，累计加息50个基点的概率为57.7%，累计加息75个基点的概率为0%。",
+      "source": "jin10",
+      "label": "金十数据",
+      "title": "美元强势行情与远期利差背离，利率优势不足以解释涨幅，风险偏好与流动性需求对美元的需求权重上升；CFTC持仓显示美元净多仓仍处高位，欧元澳元成为主要对手盘。",
+      "url": "https://xnews.jin10.com/details/235784",
+      "published_ms": 1795404695000,
+      "summary": "美元强势行情与远期利差背离，利率优势不足以解释涨幅，风险偏好与流动性需求对美元的需求权重上升；CFTC持仓显示美元净多仓仍处高位，欧元澳元成为主要对手盘。",
       "category": "央行",
-      "rule": "cb-fed",
+      "rule": "cb-policy",
       "sources": [
-        "格隆汇"
+        "金十数据"
       ]
     },
     {
       "source": "gelonghui-live",
       "label": "格隆汇",
-      "title": "特朗普政府正准备对欧盟、澳大利亚和韩国启动数字贸易调查。",
-      "url": "https://www.gelonghui.com/live/2773673",
-      "published_ms": 1795383770000,
-      "summary": "特朗普政府正准备对欧盟、澳大利亚和韩国启动数字贸易调查。",
+      "title": "A股异动丨被证监会立案调查，天阳科技20cm跌停，跌幅居市场首位",
+      "url": "https://www.gelonghui.com/live/2774420",
+      "published_ms": 1795405042000,
+      "summary": "天阳科技(300872.SZ)今日开盘20cm跌停，跌幅居市场首位，报9.02元逼近上市新低，总市值44亿元。据天阳科技的公告，公司已于11月20日收到中国证监会《立案告知书》（证监立案字0322026003号），因涉嫌信息披露违法违规被立案调查。值得注意的是，就在一个多月前，天阳科技因为在微信公众号上蹭英伟达的热点，收到深交所下发的监管函。",
       "category": "重大事件",
       "rule": "ev-shock",
       "sources": [
@@ -120,18 +120,110 @@
     {
       "source": "gelonghui-live",
       "label": "格隆汇",
-      "title": "利比亚东部当局：我们已请求安理会就俄罗斯船只和马耳他船只在班加西遭袭一事展开紧急调查。",
-      "url": "https://www.gelonghui.com/live/2773672",
-      "published_ms": 1795382572000,
-      "summary": "利比亚东部当局：我们已请求安理会就俄罗斯船只和马耳他船只在班加西遭袭一事展开紧急调查。",
-      "category": "重大事件",
-      "rule": "ev-shock",
+      "title": "包钢股份：暂无对钢铁资产进行剥离或分拆的计划",
+      "url": "https://www.gelonghui.com/live/2774413",
+      "published_ms": 1795404849000,
+      "summary": "包钢股份在2026年第三季度业绩说明会上介绍，稀土精矿定价已经市场化，每季度根据已公告的稀土精矿的定价公式和定价机制，并结合市场五网稀土氧化物均价等进行定价并公告。目前，暂无对钢铁资产进行剥离或分拆的计划。公司下一步将重点聚焦稀土钢核心赛道，扩大规模化应用。",
+      "category": "公司",
+      "rule": "co-action",
       "sources": [
         "格隆汇"
+      ]
+    },
+    {
+      "source": "wscn-global",
+      "label": "华尔街见闻全球快讯",
+      "title": "韩国企划财政部长官Lee Hyoung Il：无法就汇率水平置评，但如果经常账户顺差持续，汇率走势可能会更紧密地反映基本面。 预计今年GDP增速将在3%区间的较高水平；...",
+      "url": "https://wallstreetcn.com/livenews/3203891",
+      "published_ms": 1795401886000,
+      "summary": "韩国企划财政部长官Lee Hyoung Il：无法就汇率水平置评，但如果经常账户顺差持续，汇率走势可能会更紧密地反映基本面。 预计今年GDP增速将在3%区间的较高水平；从技术层面看，4%的增长也在可能范围内。 稳健的增长势头将在2027年延续；在国际油价预计保持稳定的背景下，通胀将有所缓解。 包括AI行业监管、地缘政治问题以及全球高利率在内的外部风险非常高；芯片行业的波动可能会向宏观经济传导。 本",
+      "category": "政策/贸易",
+      "rule": "pol-fiscal",
+      "sources": [
+        "华尔街见闻全球快讯"
+      ]
+    },
+    {
+      "source": "caixin-latest",
+      "label": "财新",
+      "title": "【商圈】卸任欧洲央行行长 精通花样游泳的拉加德望向下一站",
+      "url": "https://database.caixin.com/2026-11-23/102507797.html",
+      "published_ms": 1795403846000,
+      "summary": "即使告别欧洲央行，国际政经舞台上仍会活跃着拉加德高挑干练的身影 【财新数据专稿】在欧洲深陷俄乌战火、能源通胀、主权债务危机等重重威胁之时，欧洲央行现任行长拉加德（Christine Largarde）决定2027年2月7日正式卸任。这比她按照规定的八年任期提前了八个月。欧洲央行已于11月4日启动寻找其继任者的程序。 在欧洲央行最近一次例行发布会上宣布维持政策利率不变之后，拉加德向在场媒体解释了辞任",
+      "category": "央行",
+      "rule": "cb-policy",
+      "sources": [
+        "财新"
+      ]
+    },
+    {
+      "source": "gelonghui-live",
+      "label": "格隆汇",
+      "title": "黎曼假设证明再起争议：数学家质疑关键定义“空转”，Lean验证结果是否具有实质意义引发分歧",
+      "url": "https://www.gelonghui.com/live/2774409",
+      "published_ms": 1795404591000,
+      "summary": "Anthropic数学家Levent Alpöge此前宣布与Claude共同证明黎曼假设，并公开约1700万行Lean代码。Lean Focused Research Organization与Mathlib Initiative随后表示，有充分信心认为该证明正确。然而，数学家 J. L. Nielsen于11月20日发布论文，质疑证明中关键数学对象的定义存在缺陷，认为代码虽然通过形式验证，却没有",
+      "category": "重大事件",
+      "rule": "ev-investor",
+      "sources": [
+        "格隆汇"
+      ]
+    },
+    {
+      "source": "yicai-brief",
+      "label": "第一财经简报",
+      "title": "永杰新材：铝价波动短期对经营业绩有一定影响 长期相对稳定 | 永杰新材在2026年第三季度业绩说明会上介绍，公司采用“铝价+加工费”的定价模式，能有效传...",
+      "url": "https://www.yicai.com/brief/103449895.html",
+      "published_ms": 1795404060000,
+      "summary": "永杰新材：铝价波动短期对经营业绩有一定影响 长期相对稳定 |",
+      "category": "公司",
+      "rule": "co-earnings",
+      "sources": [
+        "第一财经简报",
+        "格隆汇"
+      ]
+    },
+    {
+      "source": "yicai-brief",
+      "label": "第一财经简报",
+      "title": "北京：健全房屋建筑信息动态更新机制，实现城镇房屋基础信息数字化率达到95%以上 | 北京市人民政府印发《北京市“十五五”时期城市更新规划》，其中提出...",
+      "url": "https://www.yicai.com/brief/103449768.html",
+      "published_ms": 1795400160000,
+      "summary": "北京：健全房屋建筑信息动态更新机制，实现城镇房屋基础信息数字化率达到95%以上 |",
+      "category": "政策/贸易",
+      "rule": "pol-fiscal",
+      "sources": [
+        "第一财经简报"
+      ]
+    },
+    {
+      "source": "wscn-global",
+      "label": "华尔街见闻全球快讯",
+      "title": "中国央行进行4,995亿元人民币隔夜逆回购操作，操作利率 1.25%。 中国央行公开市场今日净投放1,200亿元人民币。",
+      "url": "https://wallstreetcn.com/livenews/3203838",
+      "published_ms": 1795396997000,
+      "summary": "中国央行进行4,995亿元人民币隔夜逆回购操作，操作利率 1.25%。 中国央行公开市场今日净投放1,200亿元人民币。",
+      "category": "央行",
+      "rule": "cb-policy",
+      "sources": [
+        "华尔街见闻全球快讯"
+      ]
+    },
+    {
+      "source": "wscn-global",
+      "label": "华尔街见闻全球快讯",
+      "title": "伦敦铜价跌破每吨12,000美元，市场抛售加剧。",
+      "url": "https://wallstreetcn.com/livenews/3203878",
+      "published_ms": 1795401152000,
+      "summary": "伦敦铜价跌破每吨12,000美元，市场抛售加剧。",
+      "category": "重大事件",
+      "rule": "ev-investor",
+      "sources": [
+        "华尔街见闻全球快讯"
       ]
     }
   ],
-  "message": "全球经济 · 本轮 3 条\n\n【央行】\nCME“美联储观察”：美联储12月加息25个基点的概率为91.4% — https://www.gelonghui.com/live/2773679\n\n【重大事件】\n特朗普政府正准备对欧盟、澳大利亚和韩国启动数字贸易调查。 — https://www.gelonghui.com/live/2773673\n利比亚东部当局：我们已请求安理会就俄罗斯船只和马耳他船只在班加西遭袭一事展开紧急调查。 — https://www.gelonghui.com/live/2773672\n\n【行情走向】\n美股：标普500 -3.70%｜道指 -1.93%｜纳指 -5.28%｜费半 -10.73%｜纳指100 -5.61%\n欧股：德国DAX -2.60%｜英国富时 -1.02%｜法国CAC -1.89%\nA股：上证 -1.22%｜深证 -3.09%｜沪深300 -0.76%｜创业板 -3.54%｜科创50 -3.12%\n亚太：恒生 -1.89%｜韩国KOSPI -5.21%｜日经 -5.06%\n商品：黄金 -4.62%｜白银 -7.33%｜原油 +0.24%｜铜 -2.49%\n汇率债：美元指数 +0.03%｜欧元美元 +0.01%｜美债10年 -2.77%｜VIX恐慌 +26.20%",
+  "message": "全球经济 · 本轮 10 条\n\n【央行】\n美元强势行情与远期利差背离，利率优势不足以解释涨幅，风险偏好与流动性需求对美元的需求权重上升；CFTC持仓显示美元净多仓仍处高位，欧元澳元成为主要对手盘。 — https://xnews.jin10.com/details/235784\n【商圈】卸任欧洲央行行长 精通花样游泳的拉加德望向下一站 — https://database.caixin.com/2026-11-23/102507797.html\n中国央行进行4,995亿元人民币隔夜逆回购操作，操作利率 1.25%。 中国央行公开市场今日净投放1,200亿元人民币。 — https://wallstreetcn.com/livenews/3203838\n\n【重大事件】\nA股异动丨被证监会立案调查，天阳科技20cm跌停，跌幅居市场首位 — https://www.gelonghui.com/live/2774420\n黎曼假设证明再起争议：数学家质疑关键定义“空转”，Lean验证结果是否具有实质意义引发分歧 — https://www.gelonghui.com/live/2774409\n伦敦铜价跌破每吨12,000美元，市场抛售加剧。 — https://wallstreetcn.com/livenews/3203878\n\n【公司】\n包钢股份：暂无对钢铁资产进行剥离或分拆的计划 — https://www.gelonghui.com/live/2774413\n永杰新材：铝价波动短期对经营业绩有一定影响 长期相对稳定 | 永杰新材在2026年第三季度业绩说明会上介绍，公司采用“铝价+加工费”的定价模式，能有效传... — https://www.yicai.com/brief/103449895.html\n\n【政策/贸易】\n韩国企划财政部长官Lee Hyoung Il：无法就汇率水平置评，但如果经常账户顺差持续，汇率走势可能会更紧密地反映基本面。 预计今年GDP增速将在3%区间的较高水平；... — https://wallstreetcn.com/livenews/3203891\n北京：健全房屋建筑信息动态更新机制，实现城镇房屋基础信息数字化率达到95%以上 | 北京市人民政府印发《北京市“十五五”时期城市更新规划》，其中提出... — https://www.yicai.com/brief/103449768.html\n\n【行情走向】\n美股：标普500 -3.70%｜道指 -1.93%｜纳指 -5.28%｜费半 -10.73%｜纳指100 -5.61%\n欧股：德国DAX -2.60%｜英国富时 -1.02%｜法国CAC -1.89%\nA股：上证 -1.20%｜深证 -0.13%｜沪深300 -0.85%｜创业板 +0.72%｜科创50 -3.20%\n亚太：恒生 -0.65%｜韩国KOSPI -3.94%｜日经 -5.06%\n商品：黄金 +2.53%｜白银 +2.49%｜原油 -0.88%｜铜 +1.28%\n汇率债：美元指数 -0.06%｜欧元美元 +0.14%｜美债10年 -2.77%｜VIX恐慌 +26.20%",
   "telegram_sent": true,
   "pending_count": 0,
   "board": {
@@ -220,9 +312,9 @@
         "group": "A股",
         "name": "上证",
         "code": "000001.SS",
-        "price": 3533.793,
-        "previous_close": 3577.6169,
-        "change_pct": -1.22,
+        "price": 3491.2539,
+        "previous_close": 3533.793,
+        "change_pct": -1.2,
         "ok": true,
         "error": ""
       },
@@ -230,9 +322,9 @@
         "group": "A股",
         "name": "深证",
         "code": "399001.SZ",
-        "price": 10256.3896,
-        "previous_close": 10583.2002,
-        "change_pct": -3.09,
+        "price": 10243.4707,
+        "previous_close": 10256.3896,
+        "change_pct": -0.13,
         "ok": true,
         "error": ""
       },
@@ -240,9 +332,9 @@
         "group": "A股",
         "name": "沪深300",
         "code": "000300.SS",
-        "price": 3954.565,
-        "previous_close": 3984.84,
-        "change_pct": -0.76,
+        "price": 3920.81,
+        "previous_close": 3954.565,
+        "change_pct": -0.85,
         "ok": true,
         "error": ""
       },
@@ -250,9 +342,9 @@
         "group": "A股",
         "name": "创业板",
         "code": "399006.SZ",
-        "price": 2212.127,
-        "previous_close": 2293.34,
-        "change_pct": -3.54,
+        "price": 2228.0908,
+        "previous_close": 2212.1274,
+        "change_pct": 0.72,
         "ok": true,
         "error": ""
       },
@@ -260,9 +352,9 @@
         "group": "A股",
         "name": "科创50",
         "code": "000688.SS",
-        "price": 1231.089,
-        "previous_close": 1270.78,
-        "change_pct": -3.12,
+        "price": 1191.726,
+        "previous_close": 1231.089,
+        "change_pct": -3.2,
         "ok": true,
         "error": ""
       },
@@ -270,9 +362,9 @@
         "group": "亚太",
         "name": "恒生",
         "code": "^HSI",
-        "price": 22410.8008,
-        "previous_close": 22841.6191,
-        "change_pct": -1.89,
+        "price": 22264.0508,
+        "previous_close": 22410.8008,
+        "change_pct": -0.65,
         "ok": true,
         "error": ""
       },
@@ -280,9 +372,9 @@
         "group": "亚太",
         "name": "韩国KOSPI",
         "code": "^KS11",
-        "price": 4869.96,
-        "previous_close": 5137.8901,
-        "change_pct": -5.21,
+        "price": 4678.0898,
+        "previous_close": 4869.96,
+        "change_pct": -3.94,
         "ok": true,
         "error": ""
       },
@@ -300,9 +392,9 @@
         "group": "商品",
         "name": "黄金",
         "code": "GC=F",
-        "price": 3515.3999,
-        "previous_close": 3685.5,
-        "change_pct": -4.62,
+        "price": 3604.5,
+        "previous_close": 3515.3999,
+        "change_pct": 2.53,
         "ok": true,
         "error": ""
       },
@@ -310,9 +402,9 @@
         "group": "商品",
         "name": "白银",
         "code": "SI=F",
-        "price": 41.07,
-        "previous_close": 44.318,
-        "change_pct": -7.33,
+        "price": 42.055,
+        "previous_close": 41.035,
+        "change_pct": 2.49,
         "ok": true,
         "error": ""
       },
@@ -320,9 +412,9 @@
         "group": "商品",
         "name": "原油",
         "code": "CL=F",
-        "price": 83.41,
-        "previous_close": 83.21,
-        "change_pct": 0.24,
+        "price": 83.24,
+        "previous_close": 83.98,
+        "change_pct": -0.88,
         "ok": true,
         "error": ""
       },
@@ -330,9 +422,9 @@
         "group": "商品",
         "name": "铜",
         "code": "HG=F",
-        "price": 5.485,
-        "previous_close": 5.625,
-        "change_pct": -2.49,
+        "price": 5.547,
+        "previous_close": 5.477,
+        "change_pct": 1.28,
         "ok": true,
         "error": ""
       },
@@ -340,9 +432,9 @@
         "group": "汇率债",
         "name": "美元指数",
         "code": "DX-Y.NYB",
-        "price": 103.84,
+        "price": 103.749,
         "previous_close": 103.81,
-        "change_pct": 0.03,
+        "change_pct": -0.06,
         "ok": true,
         "error": ""
       },
@@ -350,9 +442,9 @@
         "group": "汇率债",
         "name": "欧元美元",
         "code": "EURUSD=X",
-        "price": 1.0971,
+        "price": 1.0985,
         "previous_close": 1.097,
-        "change_pct": 0.01,
+        "change_pct": 0.14,
         "ok": true,
         "error": ""
       },
@@ -382,10 +474,10 @@
       "【行情走向】",
       "美股：标普500 -3.70%｜道指 -1.93%｜纳指 -5.28%｜费半 -10.73%｜纳指100 -5.61%",
       "欧股：德国DAX -2.60%｜英国富时 -1.02%｜法国CAC -1.89%",
-      "A股：上证 -1.22%｜深证 -3.09%｜沪深300 -0.76%｜创业板 -3.54%｜科创50 -3.12%",
-      "亚太：恒生 -1.89%｜韩国KOSPI -5.21%｜日经 -5.06%",
-      "商品：黄金 -4.62%｜白银 -7.33%｜原油 +0.24%｜铜 -2.49%",
-      "汇率债：美元指数 +0.03%｜欧元美元 +0.01%｜美债10年 -2.77%｜VIX恐慌 +26.20%"
+      "A股：上证 -1.20%｜深证 -0.13%｜沪深300 -0.85%｜创业板 +0.72%｜科创50 -3.20%",
+      "亚太：恒生 -0.65%｜韩国KOSPI -3.94%｜日经 -5.06%",
+      "商品：黄金 +2.53%｜白银 +2.49%｜原油 -0.88%｜铜 +1.28%",
+      "汇率债：美元指数 -0.06%｜欧元美元 +0.14%｜美债10年 -2.77%｜VIX恐慌 +26.20%"
     ]
   }
 }

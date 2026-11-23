@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
-  "updated_at": "2026-11-22T22:26:46.131079+00:00",
-  "last_run": "2026-11-22T22:26:43+00:00",
+  "updated_at": "2026-11-23T03:42:43.326176+00:00",
+  "last_run": "2026-11-23T03:42:39+00:00",
   "seen": [
     {
       "title": "机构：美国10月PCE通胀料升至3.8%，美联储12月加息预期或升温",
@@ -234,14 +234,94 @@
       "rule": "ev-shock",
       "status": "已推送",
       "at": "2026-11-22T22:26:46.131009+00:00"
+    },
+    {
+      "title": "美元强势行情与远期利差背离，利率优势不足以解释涨幅，风险偏好与流动性需求对美元的需求权重上升；CFTC持仓显示美元净多仓仍处高位，欧元澳元成为主要对手盘。",
+      "url": "https://xnews.jin10.com/details/235784",
+      "category": "央行",
+      "rule": "cb-policy",
+      "status": "已推送",
+      "at": "2026-11-23T03:42:43.325932+00:00"
+    },
+    {
+      "title": "A股异动丨被证监会立案调查，天阳科技20cm跌停，跌幅居市场首位",
+      "url": "https://www.gelonghui.com/live/2774420",
+      "category": "重大事件",
+      "rule": "ev-shock",
+      "status": "已推送",
+      "at": "2026-11-23T03:42:43.325957+00:00"
+    },
+    {
+      "title": "包钢股份：暂无对钢铁资产进行剥离或分拆的计划",
+      "url": "https://www.gelonghui.com/live/2774413",
+      "category": "公司",
+      "rule": "co-action",
+      "status": "已推送",
+      "at": "2026-11-23T03:42:43.325961+00:00"
+    },
+    {
+      "title": "韩国企划财政部长官Lee Hyoung Il：无法就汇率水平置评，但如果经常账户顺差持续，汇率走势可能会更紧密地反映基本面。 预计今年GDP增速将在3%区间的较高水平；...",
+      "url": "https://wallstreetcn.com/livenews/3203891",
+      "category": "政策/贸易",
+      "rule": "pol-fiscal",
+      "status": "已推送",
+      "at": "2026-11-23T03:42:43.325965+00:00"
+    },
+    {
+      "title": "【商圈】卸任欧洲央行行长 精通花样游泳的拉加德望向下一站",
+      "url": "https://database.caixin.com/2026-11-23/102507797.html",
+      "category": "央行",
+      "rule": "cb-policy",
+      "status": "已推送",
+      "at": "2026-11-23T03:42:43.325968+00:00"
+    },
+    {
+      "title": "黎曼假设证明再起争议：数学家质疑关键定义“空转”，Lean验证结果是否具有实质意义引发分歧",
+      "url": "https://www.gelonghui.com/live/2774409",
+      "category": "重大事件",
+      "rule": "ev-investor",
+      "status": "已推送",
+      "at": "2026-11-23T03:42:43.325971+00:00"
+    },
+    {
+      "title": "永杰新材：铝价波动短期对经营业绩有一定影响 长期相对稳定 | 永杰新材在2026年第三季度业绩说明会上介绍，公司采用“铝价+加工费”的定价模式，能有效传...",
+      "url": "https://www.yicai.com/brief/103449895.html",
+      "category": "公司",
+      "rule": "co-earnings",
+      "status": "已推送",
+      "at": "2026-11-23T03:42:43.325974+00:00"
+    },
+    {
+      "title": "北京：健全房屋建筑信息动态更新机制，实现城镇房屋基础信息数字化率达到95%以上 | 北京市人民政府印发《北京市“十五五”时期城市更新规划》，其中提出...",
+      "url": "https://www.yicai.com/brief/103449768.html",
+      "category": "政策/贸易",
+      "rule": "pol-fiscal",
+      "status": "已推送",
+      "at": "2026-11-23T03:42:43.325981+00:00"
+    },
+    {
+      "title": "中国央行进行4,995亿元人民币隔夜逆回购操作，操作利率 1.25%。 中国央行公开市场今日净投放1,200亿元人民币。",
+      "url": "https://wallstreetcn.com/livenews/3203838",
+      "category": "央行",
+      "rule": "cb-policy",
+      "status": "已推送",
+      "at": "2026-11-23T03:42:43.325985+00:00"
+    },
+    {
+      "title": "伦敦铜价跌破每吨12,000美元，市场抛售加剧。",
+      "url": "https://wallstreetcn.com/livenews/3203878",
+      "category": "重大事件",
+      "rule": "ev-investor",
+      "status": "已推送",
+      "at": "2026-11-23T03:42:43.325988+00:00"
     }
   ],
   "source_failures": {},
   "source_states": {
     "wscn-global": "ok",
-    "yicai-brief": "empty",
-    "caixin-latest": "empty",
-    "jin10": "empty",
+    "yicai-brief": "ok",
+    "caixin-latest": "ok",
+    "jin10": "ok",
     "gelonghui-live": "ok"
   },
   "runs": [
@@ -260,6 +340,10 @@
     {
       "at": "2026-11-22T22:26:43+00:00",
       "gap_minutes": 373.1
+    },
+    {
+      "at": "2026-11-23T03:42:39+00:00",
+      "gap_minutes": 315.9
     }
   ],
   "pending": []

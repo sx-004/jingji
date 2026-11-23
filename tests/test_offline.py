@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import json
 import os
+os.environ.setdefault("TELEGRAM_RETRY_DELAYS", "0")  # 单测不等待重试
 import sys
 import tempfile
 import unittest

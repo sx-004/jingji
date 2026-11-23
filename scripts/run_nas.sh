@@ -34,6 +34,17 @@ if [ -n "$PROXY" ]; then
   export CINDY_FORCE_PROXY=1
 fi
 
+# 邮件备用通道：Telegram 挂掉（代理整体不可用）时仍能告警，不依赖 VPN。
+notify_email() {
+  local text="$1"
+  local helper="${MONITOR_EMAIL_HELPER:-$BASE_DIR/bin/notify_email.py}"
+  [ -f "$helper" ] || return 0
+  if [ -z "${SMTP_USER:-}" ] || [ -z "${SMTP_PASS:-}" ]; then
+    return 0
+  fi
+  "$PYTHON" "$helper" "$text" >> "$LOG_FILE" 2>&1 || true
+}
+
 notify_failure() {
   local text="$1"
   if [ -z "${TELEGRAM_BOT_TOKEN:-}" ] || [ -z "${TELEGRAM_CHAT_ID:-}" ]; then
@@ -62,6 +73,7 @@ echo "$(date -Is) $REPO_NAME exit=$code elapsed=${elapsed}s" >> "$LOG_FILE"
 if [ "$code" -gt 1 ]; then
   tail_text="$(tail -n 8 "$LOG_FILE" | tr "\n" " " | cut -c1-350)"
   notify_failure "【监控异常】${REPO_NAME} 退出码 ${code}，耗时 ${elapsed} 秒。日志：${tail_text}"
+  notify_email "【监控异常】${REPO_NAME} 退出码 ${code}，耗时 ${elapsed} 秒。日志：${tail_text}"
 fi
 
 find "$LOG_DIR" -maxdepth 1 -name "$REPO_NAME-*.log" -mtime +"$LOG_KEEP_DAYS" -delete 2>/dev/null || true

@@ -7,6 +7,7 @@
 from __future__ import annotations
 
 import ipaddress
+import os
 import socket
 import time
 import urllib.error
@@ -89,6 +90,28 @@ def validate_url(url: str) -> None:
         raise FetchFailure(f"DNS 含非公网地址，已拒绝: {host}", "dns_error")
 
 
+def _proxy_handler() -> urllib.request.ProxyHandler:
+    """代理开关：只读显式设置的环境变量，未设置时不走代理。
+
+    NAS 上靠 HTTPS_PROXY/HTTP_PROXY 走本机代理才能访问 Telegram 和部分交易所；
+    GitHub Actions 上这些变量不存在，行为与此前「不走代理」完全一致。
+    NO_PROXY 由 urllib 的 proxy_bypass 自动处理，不需要在这里判断。
+    """
+    proxies: Dict[str, str] = {}
+    for scheme in ("https", "http"):
+        for key in (scheme + "_proxy", scheme.upper() + "_PROXY"):
+            value = os.environ.get(key)
+            if value:
+                proxies[scheme] = value
+                break
+    if not proxies:
+        for key in ("all_proxy", "ALL_PROXY"):
+            value = os.environ.get(key)
+            if value:
+                return urllib.request.ProxyHandler({"https": value, "http": value})
+    return urllib.request.ProxyHandler(proxies)
+
+
 class _SafeRedirect(urllib.request.HTTPRedirectHandler):
     def redirect_request(self, req, fp, code, msg, headers, newurl):
         validate_url(newurl)
@@ -117,7 +140,7 @@ def fetch(url: str, *, timeout: float = DEFAULT_TIMEOUT, retries: int = 1,
                            duration_ms=int((time.time() - started) * 1000))
     request_headers = dict(HEADERS)
     request_headers.update(headers or {})
-    opener = urllib.request.build_opener(_SafeRedirect(), urllib.request.ProxyHandler({}))
+    opener = urllib.request.build_opener(_SafeRedirect(), _proxy_handler())
     last: Optional[Exception] = None
     last_status = 0
     for attempt in range(retries + 1):

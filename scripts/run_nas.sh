@@ -53,6 +53,7 @@ notify_email() {
   "$PYTHON" "$helper" "$text" >> "$LOG_FILE" 2>&1 || true
 }
 
+# 已停用：失败告警改走邮箱（用户 2026-11-24 定）。保留代码，需要时取消注释即可恢复。
 notify_failure() {
   local text="$1"
   if [ -z "${TELEGRAM_BOT_TOKEN:-}" ] || [ -z "${TELEGRAM_CHAT_ID:-}" ]; then
@@ -80,7 +81,7 @@ echo "$(date -Is) $REPO_NAME exit=$code elapsed=${elapsed}s" >> "$LOG_FILE"
 # 退出码语义与仓库一致：0=全成功，1=部分源失败但已隔离（正常），2 及以上才需要处理。
 if [ "$code" -gt 1 ]; then
   tail_text="$(tail -n 8 "$LOG_FILE" | tr "\n" " " | cut -c1-350)"
-  notify_failure "【监控异常】${REPO_NAME} 退出码 ${code}，耗时 ${elapsed} 秒。日志：${tail_text}"
+  # 按用户要求：失败告警只走邮箱，不再发 Telegram（避免同一故障两条通道重复打扰）。
   notify_email "【监控异常】${REPO_NAME} 退出码 ${code}，耗时 ${elapsed} 秒。日志：${tail_text}"
 fi
 

@@ -53,6 +53,11 @@ class FetchResult:
         return self.data.decode(encoding, "replace")
 
 
+def _proxy_configured() -> bool:
+    """是否配置了代理。走代理时域名由代理解析，本地 DNS 结果不作安全依据。"""
+    return bool(_proxy_handler().proxies)
+
+
 def validate_url(url: str) -> None:
     parsed = urlsplit(url)
     if parsed.scheme.lower() not in ("http", "https"):
@@ -70,6 +75,10 @@ def validate_url(url: str) -> None:
         literal = None
     if literal is not None and not literal.is_global:
         raise FetchFailure(f"非公网 IP 被拒绝: {literal}", "config_error")
+    if _proxy_configured():
+        # 走代理时由代理解析域名：本地 DNS 可能是 Fake-IP 或被污染的结果，不能据此判断目标安全。
+        # 字面 IP、私网主机名等检查在上面已经做过，仍然生效。
+        return
     port = parsed.port or (443 if parsed.scheme.lower() == "https" else 80)
     try:
         answers = socket.getaddrinfo(host, port, type=socket.SOCK_STREAM)

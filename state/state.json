@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
-  "updated_at": "2026-11-23T03:42:43.326176+00:00",
-  "last_run": "2026-11-23T03:42:39+00:00",
+  "updated_at": "2026-11-23T14:30:35.246986+00:00",
+  "last_run": "2026-11-23T14:30:26+00:00",
   "seen": [
     {
       "title": "机构：美国10月PCE通胀料升至3.8%，美联储12月加息预期或升温",
@@ -314,6 +314,86 @@
       "rule": "ev-investor",
       "status": "已推送",
       "at": "2026-11-23T03:42:43.325988+00:00"
+    },
+    {
+      "title": "受英伟达相关消息影响，交易员加大对欧洲央行和英国央行加息的押注。",
+      "url": "https://www.gelonghui.com/live/2775290",
+      "category": "央行",
+      "rule": "cb-policy",
+      "status": "已推送",
+      "at": "2026-11-23T14:30:35.246572+00:00"
+    },
+    {
+      "title": "美国信用违约风险在黄仁勋复职后进一步缓解。",
+      "url": "https://www.gelonghui.com/live/2775304",
+      "category": "重大事件",
+      "rule": "ev-shock",
+      "status": "已推送",
+      "at": "2026-11-23T14:30:35.246589+00:00"
+    },
+    {
+      "title": "黄仁勋：很荣幸回到英伟达，迫不及待想回去工作 | 11月23日，英伟达宣布，即日起恢复黄仁勋作为公司总裁兼CEO及董事会成员的职务。",
+      "url": "https://www.yicai.com/brief/103451039.html",
+      "category": "公司",
+      "rule": "co-action",
+      "status": "已推送",
+      "at": "2026-11-23T14:30:35.246594+00:00"
+    },
+    {
+      "title": "美国会报告：对澳出售核潜艇有损美自身力量",
+      "url": "https://wallstreetcn.com/livenews/3204196",
+      "category": "政策/贸易",
+      "rule": "pol-fiscal",
+      "status": "已推送",
+      "at": "2026-11-23T14:30:35.246598+00:00"
+    },
+    {
+      "title": "美国国债收益率上升",
+      "url": "https://www.gelonghui.com/live/2775278",
+      "category": "央行",
+      "rule": "cb-bonds",
+      "status": "已推送",
+      "at": "2026-11-23T14:30:35.246601+00:00"
+    },
+    {
+      "title": "英伟达：相信重新委任黄仁勋不会带来安全风险。 调查将继续进行直至结束。",
+      "url": "https://wallstreetcn.com/livenews/3204337",
+      "category": "重大事件",
+      "rule": "ev-shock",
+      "status": "已推送",
+      "at": "2026-11-23T14:30:35.246604+00:00"
+    },
+    {
+      "title": "英伟达董事会：黄仁勋复职不构成国家安全风险 | 11月23日，英伟达宣布，即日起恢复黄仁勋作为公司总裁兼CEO及董事会成员的职务。董事会一致投票决定恢复...",
+      "url": "https://www.yicai.com/brief/103451028.html",
+      "category": "公司",
+      "rule": "co-action",
+      "status": "已推送",
+      "at": "2026-11-23T14:30:35.246607+00:00"
+    },
+    {
+      "title": "住建部公布四起瓶装液化石油气领域典型执法案例",
+      "url": "https://wallstreetcn.com/livenews/3204186",
+      "category": "政策/贸易",
+      "rule": "pol-fiscal",
+      "status": "已推送",
+      "at": "2026-11-23T14:30:35.246615+00:00"
+    },
+    {
+      "title": "以色列央行维持基准利率在3.25%不变；预计利率为3.25%。",
+      "url": "https://www.gelonghui.com/live/2775267",
+      "category": "央行",
+      "rule": "cb-policy",
+      "status": "已推送",
+      "at": "2026-11-23T14:30:35.246621+00:00"
+    },
+    {
+      "title": "前三季度市场监管总局完成经营者集中反垄断审查440件",
+      "url": "https://wallstreetcn.com/livenews/3204326",
+      "category": "重大事件",
+      "rule": "ev-shock",
+      "status": "已推送",
+      "at": "2026-11-23T14:30:35.246626+00:00"
     }
   ],
   "source_failures": {},
@@ -344,6 +424,10 @@
     {
       "at": "2026-11-23T03:42:39+00:00",
       "gap_minutes": 315.9
+    },
+    {
+      "at": "2026-11-23T14:30:26+00:00",
+      "gap_minutes": 647.8
     }
   ],
   "pending": []

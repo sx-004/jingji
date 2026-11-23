@@ -15,6 +15,10 @@ LOG_KEEP_DAYS="${MONITOR_LOG_KEEP_DAYS:-14}"
 
 mkdir -p "$LOG_DIR"
 LOG_FILE="$LOG_DIR/$REPO_NAME-$(date +%Y%m%d).log"
+# 飞牛的存储空间会把文件权限重置成 000，日志写不进去会导致整轮不执行。
+# 每轮先把日志文件恢复成可读写，避免"权限被重置 → 重定向失败 → 任务静默不跑"。
+touch "$LOG_FILE" 2>/dev/null || true
+chmod 666 "$LOG_FILE" 2>/dev/null || true
 cd "$REPO_DIR" || { echo "无法进入 $REPO_DIR" >&2; exit 1; }
 
 if [ -f "$ENV_FILE" ]; then

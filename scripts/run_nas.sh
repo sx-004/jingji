@@ -22,7 +22,15 @@ if [ -f "$ENV_FILE" ]; then
   # shellcheck disable=SC1090
   . "$ENV_FILE"
   set +a
-else
+fi
+# 共享配置（如 SMTP 告警账号）：各仓通用，只填一处。
+if [ -f "$BASE_DIR/env/common.env" ]; then
+  set -a
+  # shellcheck disable=SC1090
+  . "$BASE_DIR/env/common.env"
+  set +a
+fi
+if [ ! -f "$ENV_FILE" ]; then
   echo "$(date -Is) 警告：缺少环境文件 $ENV_FILE" >> "$LOG_FILE"
 fi
 

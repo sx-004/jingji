@@ -58,8 +58,9 @@ elapsed=$(( $(date +%s) - started ))
 
 echo "$(date -Is) $REPO_NAME exit=$code elapsed=${elapsed}s" >> "$LOG_FILE"
 
-if [ "$code" -ne 0 ]; then
-  tail_text="$(tail -n 6 "$LOG_FILE" | tr "\n" " " | cut -c1-350)"
+# 退出码语义与仓库一致：0=全成功，1=部分源失败但已隔离（正常），2 及以上才需要处理。
+if [ "$code" -gt 1 ]; then
+  tail_text="$(tail -n 8 "$LOG_FILE" | tr "\n" " " | cut -c1-350)"
   notify_failure "【监控异常】${REPO_NAME} 退出码 ${code}，耗时 ${elapsed} 秒。日志：${tail_text}"
 fi
 
